@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Gilles Hoarau
-email: gilles@gilles.dev
+title: Hello World!
+email: blog@gilles.dev
 description: >- # this means to ignore newlines until "baseurl:"
   Hey there! I'm Gilles, a software engineer and entrepreneur.
   I write about software development, startups, and life.
