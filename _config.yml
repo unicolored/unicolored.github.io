@@ -21,7 +21,7 @@
 title: A solopreneur diary
 email: gilles@gilles.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  Hey there! I'm Gilles, a software engineer and entrepreneur.
+  Hey there! I'm Gilles, a solopreneur.
   I write about software development, startups, and life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.gilles.blog/" # the base hostname & protocol for your site, e.g. http://example.com
