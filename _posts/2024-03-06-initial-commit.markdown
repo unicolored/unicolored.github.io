@@ -2,7 +2,7 @@
 layout: post
 title:  "Initial commit"
 date:   2024-03-06 16:00:00 +0100
-categories: jekyll update
+categories: developer journey
 ---
 Gilles here! Keeping track of my developer journey through projects, experiments, and open source collaborations.
 
