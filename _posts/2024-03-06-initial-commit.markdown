@@ -19,7 +19,3 @@ class DevDiary {
   }
 }
 {% endhighlight %}
-
-Check out my [developer website][developer-website].
-
-[developer-website]: https://www.gilles.dev/
