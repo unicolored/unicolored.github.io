@@ -6,6 +6,4 @@ permalink: /about/
 
 Hey there! I'm Gilles Hoarau. A developer.
 
-Check out my developer website: [Gilles.dev][gilles-dev].
-
-[gilles-dev]: https://www.gilles.dev/
+Check out my website: [Gilles.dev][gilles-dev].
