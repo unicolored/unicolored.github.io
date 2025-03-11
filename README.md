@@ -1,4 +1,4 @@
-# Gilles.blog
+# Gilles.blog v1.0.0
 
 TODO:
 
