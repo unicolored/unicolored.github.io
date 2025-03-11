@@ -1,5 +1,23 @@
-# Gilles.blog v1.0.0
+# The Red Journey
 
-TODO:
+Welcome to **The Red Journey**, my creative space at [unicolored.com](https://unicolored.com).
+This Jekyll-powered blog, hosted on GitHub Pages, is where I share projects, ideas, and experiments—tinted with a red-hued twist.
 
-- Add a theme: https://docs.github.com/fr/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
+## About
+- **Who**: unicolored (that’s me!)
+- **What**: A blog for coding adventures and creative stuff
+- **Why**: To document my journey, one red step at a time
+
+## Setup
+1. Clone this repo: `git clone https://github.com/unicolored/unicolored.github.io.git`
+2. Install dependencies: `bundle install`
+3. Run locally: `bundle exec jekyll serve`
+4. Visit `localhost:4000` to preview
+
+## Posts
+Find content in `_posts/`. Add your own with `YYYY-MM-DD-title.md`.
+
+## License
+MIT—fork it, tweak it, make it yours.
+
+Follow along at [unicolored.com](https://unicolored.com)!

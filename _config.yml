@@ -17,17 +17,33 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-title: A solopreneur changelog
-email: gilles@gilles.dev
+# https://github.com/jekyll/minima/tree/2.5-stable
+title: The Red Journey
+email: hi@gilles.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  Hey there! I'm Gilles, a solopreneur.
-  I write about software development, startups, and life.
+  Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.gilles.blog/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: gilleshoarau
-github_username:  unicolored
-
+url: "https://unicolored.com/" # the base hostname & protocol for your site, e.g. http://example.com
+show_excerpts: true
+#   google_analytics: UA-NNNNNNNN-N
+twitter_username: unicolored
+github_username: unicolored
+#dribbble_username: jekyll
+#facebook_username: jekyll
+#flickr_username: jekyll
+#instagram_username: jekyll
+#linkedin_username: jekyll
+#pinterest_username: jekyll
+#youtube_username: jekyll
+#googleplus_username: +jekyll
+#rss: rss
+header_pages:
+  - about.md
+  - portfolio.md
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
 # Build settings
 theme: minima
 #theme: jekyll-theme-minimal
@@ -55,3 +71,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+name: Jekyll Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Deploy when changes are pushed to the main branch
