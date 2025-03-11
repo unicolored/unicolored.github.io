@@ -23,7 +23,7 @@ email: hi@gilles.dev
 description: >- # this means to ignore newlines until "baseurl:"
   Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://unicolored.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://unicolo.red/" # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true
 google_analytics: G-V55V6NLT12
 twitter_username: unicolored
