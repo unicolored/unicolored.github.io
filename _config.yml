@@ -39,10 +39,6 @@ github_username: unicolored
 #rss: rss
 header_pages:
   - about.markdown
-collections:
-  pages:
-    output: true
-    permalink: /:name/
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
