@@ -38,8 +38,7 @@ github_username: unicolored
 #googleplus_username: +jekyll
 #rss: rss
 header_pages:
-  - about.md
-  - portfolio.md
+  - about.markdown
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
