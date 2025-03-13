@@ -12,6 +12,8 @@ Hello, chess fans! 🚀 We're excited to share **Chessfield Live**, a simple and
 - **Live Match Viewing**: Follow games in real time with an easy-to-use interface.
 - **Lichess Data**: Connected to Lichess for seamless access to live games.
 
+![Chessfield Live is Live](/assets/images/2025-03-13-introducing-chessfield-live.png)
+
 ### Get Started:
 
 Visit [Chessfield Live](https://chessfield.live/) to start watching games now. Whether you're studying moves or just a fan of the game, it's a neat tool to have in your chess kit.
