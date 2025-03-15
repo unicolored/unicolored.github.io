@@ -37,6 +37,7 @@ github_username: unicolored
 #youtube_username: jekyll
 #googleplus_username: +jekyll
 #rss: rss
+plugins_dir: _plugins
 header_pages:
   - about.markdown
 # Minima date format
@@ -45,7 +46,9 @@ minima:
   date_format: "%b %-d, %Y"
 # Build settings
 theme: minima
+safe: false
 #theme: jekyll-theme-minimal
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
