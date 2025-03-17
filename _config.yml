@@ -37,6 +37,12 @@ github_username: unicolored
 #googleplus_username: +jekyll
 #rss: rss
 plugins_dir: _plugins
+#whitelist:
+#  - meilisearch_indexer
+collections_dir: contents
+collections:
+  projects:
+    output: true
 header_pages:
   - about.markdown
 # Minima date format

@@ -150,6 +150,8 @@ GEM
       jekyll (>= 3.9, < 4.0)
       jekyll-commonmark (~> 1.4.0)
       rouge (>= 2.0, < 5.0)
+    jekyll-compose (0.12.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-default-layout (0.1.5)
       jekyll (>= 3.0, < 5.0)
     jekyll-feed (0.17.0)
@@ -333,6 +335,7 @@ DEPENDENCIES
   github-pages
   http_parser.rb (~> 0.6.0)
   httparty
+  jekyll-compose (~> 0.12)
   jekyll-feed (~> 0.12)
   jekyll-seo-tag (~> 2.6)
   jekyll-sitemap (~> 1.4)
