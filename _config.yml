@@ -85,3 +85,23 @@ on:
   push:
     branches:
       - main  # Deploy when changes are pushed to the main branch
+
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      description:
+      image:
+      category:
+      tags:
+    posts:
+      description:
+      image:
+      category:
+      tags:
+      published: false
+      sitemap: false
+    things:
+      description:
+      image:
+      category:
+      tags:
