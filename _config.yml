@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://unicolo.red" # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true
-google_analytics: G-V55V6NLT12
+#google_analytics: G-V55V6NLT12
 twitter_username: gilleshoarau
 github_username: unicolored
 #dribbble_username: jekyll
@@ -58,6 +58,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-meilisearch
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -79,13 +80,6 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-name: Jekyll Deploy to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main  # Deploy when changes are pushed to the main branch
-
 jekyll_compose:
   default_front_matter:
     drafts:
@@ -100,11 +94,20 @@ jekyll_compose:
       tags:
       published: false
       sitemap: false
-    things:
-      description:
-      image:
-      category:
-      tags:
+
+meilisearch:
+  url: 'http://localhost:7700'
+  api_key: 'b3f0f337267b9fda8d9e39a1975ccc96c8003bd25ad6ddaa058cf67dd19c0fc6'
+  search_api_key: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f'
+  index_name: 'unicolored_dev'
+  collections:
+    posts:
+      fields:
+        - title
+        - content
+        - url
+        - category
+        - tags
 
 analytics:
   id: '3dd19a25-088b-4c23-a7ea-d7b76c59b71e'

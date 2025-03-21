@@ -1,2 +1,10 @@
 _site
 *.log
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile.lock
+node_modules
+*.local.yml
+*.secrets.yml
