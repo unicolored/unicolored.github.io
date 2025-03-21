@@ -7,6 +7,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   red with code, ideas, and life.
 twitter_username: gilleshoarau
 github_username: unicolored
+header_pages:
+  - about
 rss: rss
 collections_dir: contents
 collections:
