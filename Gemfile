@@ -43,3 +43,6 @@ gem 'logger'
 
 gem "json" # For Meilisearch
 gem "httparty"
+
+gem 'benchmark'
+gem 'html-proofer'
