@@ -1,0 +1,3 @@
+_site/
+*.liquid
+node_modules/
