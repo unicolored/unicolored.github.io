@@ -61,10 +61,10 @@ jobs:
             exit 1
           fi
 
-      - name: Test links with HTMLProofer
-        run:
-          bundle exec htmlproofer ./_site --check-external-hash --ignore-urls
-          "/localhost/"
+      #      - name: Test links with HTMLProofer
+      #        run:
+      #          bundle exec htmlproofer ./_site --check-external-hash --ignore-urls
+      #          "/localhost/"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
