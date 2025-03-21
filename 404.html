@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>The Red Journey | Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="The Red Journey" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life." />
+<meta property="og:description" content="Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life." />
+<link rel="canonical" href="https://unicolo.red/404.html" />
+<meta property="og:url" content="https://unicolo.red/404.html" />
+<meta property="og:site_name" content="The Red Journey" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Red Journey" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.","headline":"The Red Journey","url":"https://unicolo.red/404.html"}</script>
+<!-- End Jekyll SEO tag -->
+<!--    <link rel="stylesheet" href="/assets/main.css">-->
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/default.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/webawesome.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/webawesome.loader.js"></script>
+
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/glossy.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/brand/red.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/mellow/typography.css" />
+
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/utilities/fouce.css" /><link type="application/atom+xml" rel="alternate" href="https://unicolo.red/feed.xml" title="The Red Journey" /><!---->
+
+    
+
+<script defer src="https://analytics.wrkng.io/script.js"
+        data-website-id="3dd19a25-088b-4c23-a7ea-d7b76c59b71e"
+        data-domains="unicolo.red"></script>
+
+<script type="text/javascript">
+    (() => {
+        const name = 'outbound-link-click';
+        document.querySelectorAll('a').forEach(a => {
+            if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+                a.setAttribute('data-umami-event', name);
+                a.setAttribute('data-umami-event-url', a.href);
+            }
+        });
+    })();
+</script>
+
+
+</head>
+<body>
+
+<wa-page view="desktop" navigation-placement="start" style="--header-height: 57.59375px; --subheader-height: 57.59375px; --banner-height: 57.59375px; --footer-height: 57.59375px;">
+
+
+<header class="slot-content" slot="header">
+    <div class="wrapper text-center p-5 w-full"><a class="site-title wa-heading-3xl" rel="author" href="/">The Red Journey</a>
+    </div>
+</header>
+<header class="slot-content" slot="banner"><div class="p-4">
+        <nav class="wa-cluster"></nav>
+      </div></header>
+
+<div class="slot-content" slot="subheader">
+  
+<!-- Search Input -->
+
+<div class="wa-grid w-full px-12">
+  <div class="wa-stack " >
+    <form id="formsearch">
+      <div class="wa-flank:end wa-gap-xs">
+        <wa-input type="text" id="search" placeholder="Rechercher...">
+          <wa-icon slot="prefix" name="magnifying-glass"></wa-icon>
+        </wa-input>
+        <wa-button type="submit" id="search-button">Recherche</wa-button>
+      </div>
+    </form>
+    <wa-stack id="results" class="wa-gap-m"></wa-stack>
+  </div>
+</div>
+
+<!-- Meilisearch JS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
+<script>
+  const meilisearchConfig = {
+    host: "https://meilisearch.wrkng.io",
+    apiKey: "62239a75a262685f951eb38d0bb287a143593bcb1cbc253444c4067510e8402e"
+  };
+  const client = new MeiliSearch(meilisearchConfig);
+  const index = client.index('unicolored_prod');
+
+  document.getElementById('formsearch').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('search');
+    const query = input.value;
+
+    if (query.length < 2) {
+      document.getElementById('results').innerHTML = '';
+      return;
+    }
+
+    try {
+      const results = await index.search(query);
+
+      if (typeof umami !== 'undefined') {
+        umami.track('Recherche', { query: query, resultsCount: results.hits.length });
+      }
+
+      document.getElementById('results').innerHTML = results.hits
+        .map(hit => `<wa-card><a href="${hit.url}" >${hit.title}</a></wa-card>`)
+        .join('');
+    } catch (error) {
+      console.error('Search error:', error);
+      document.getElementById('results').innerHTML = '<p class="text-red-500 p-4">Search failed. Please try again.</p>';
+    }
+  });
+</script>
+
+
+</div>
+<header class="slot-content" slot="main-header">
+        <!-- Breadcrumb -->
+        <div class="m-auto px-12 py-4">
+                <!-- ... -->
+            <wa-breadcrumb>
+                <wa-breadcrumb-item href="/">Home</wa-breadcrumb-item>
+
+                
+                <wa-breadcrumb-item href="/404.html"></wa-breadcrumb-item>
+                
+            </wa-breadcrumb>
+        </div>
+    </header>
+    <div class="slot-content" slot="">
+        <div class="wrapper">
+            <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+
+        </div>
+    </div>
+    <footer class="slot-content" slot="main-footer">
+    </footer>
+    <div class="slot-content" slot="aside">
+    </div><footer class="slot-content" slot="footer">
+
+  <wa-stack class="w-full mt-12 mb-24">
+
+    <hr class="border-1 border-red-200">
+    <h2 class="text-center w-full" style="color:var(--wa-color-brand)">The Red Journey</h2>
+
+    <!--  <ul class="contact-list">-->
+    <!--    <li class="p-name">-->
+    <!---->
+    <!--      The Red Journey-->
+    <!---->
+    <!--    </li>-->
+    <!---->
+    <!--  </ul>-->
+
+    <!--  <div class="footer-social">-->
+    <!--&lt;!&ndash;<ul class="social-media-list"><li><a href="https://github.com/unicolored"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">unicolored</span></a></li><li><a href="https://www.twitter.com/gilleshoarau"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">gilleshoarau</span></a></li><li><a href="/feed.xml"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>rss</span></a></li></ul>
+&ndash;&gt;-->
+    <!--  </div>-->
+
+    <div class="prose m-auto">
+      <p>Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</p>
+    </div>
+  </wa-stack>
+
+</footer>
+</wa-page>
+
+
+
+
+<initial-sh sounds></initial-sh>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/initial-sh/initial-sh.bundled.js"></script>
+
+
+</body>
+
+</html>

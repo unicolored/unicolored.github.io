@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://unicolo.red/feed.xml" rel="self" type="application/atom+xml" /><link href="https://unicolo.red/" rel="alternate" type="text/html" /><updated>2025-03-21T22:21:00+00:00</updated><id>https://unicolo.red/feed.xml</id><title type="html">The Red Journey</title><subtitle>Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</subtitle><entry><title type="html">Supercharge Your Jekyll Site with Our Meilisearch Plugin</title><link href="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html" rel="alternate" type="text/html" title="Supercharge Your Jekyll Site with Our Meilisearch Plugin" /><published>2025-03-21T11:06:00+00:00</published><updated>2025-03-21T11:06:00+00:00</updated><id>https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin</id><content type="html" xml:base="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html"><![CDATA[<p>Hey there, Jekyll enthusiasts! 🌟 Introducing our latest innovation: a Jekyll
+plugin that integrates seamlessly with Meilisearch to bring you lightning-fast
+search capabilities!</p>
+
+<h2 id="-whats-under-the-hood">🔍✨ What’s under the hood?</h2>
+
+<p>Our Jekyll Meilisearch Plugin is all about efficiency and speed. It indexes your
+site’s content, including posts and pages, into Meilisearch—an open-source,
+typo-tolerant search engine that delivers relevant results in a flash.</p>
+
+<h2 id="️-key-features">🏎️💨 Key Features:</h2>
+
+<ul>
+  <li>Incremental Indexing: Only syncs changes between your Jekyll site and
+Meilisearch, saving you time and resources.</li>
+  <li>Configurable Settings: Customize fields, collections through your _config.yml
+file.</li>
+  <li>Robust Error Handling: Includes retries and fallback options to ensure smooth
+operation.</li>
+</ul>
+
+<h2 id="getting-started-️">Getting Started: 🛠️</h2>
+
+<p>Add the gem to your Jekyll site’s Gemfile:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s2">"jekyll-meilisearch"</span><span class="p">,</span> <span class="s2">"~&gt; 0.4.1"</span> <span class="c1"># beta version</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Run bundle install.</li>
+  <li>Configure your _config.yml with Meilisearch settings.</li>
+  <li>Build your site and watch the magic happen! 🪄</li>
+</ul>
+
+<p>For detailed usage instructions and information, please refer to
+<a href="https://github.com/unicolored/jekyll-meilisearch">jekyll-meilisearch on GitHub</a>
+and <a href="https://rubygems.org/gems/jekyll-meilisearch">RubyGems</a>.</p>
+
+<p>Give it a try and let us know what you think—we’d love to hear your feedback and
+ideas! 👂💡<br />
+Happy searching! 🎉</p>]]></content><author><name></name></author><category term="project" /><category term="jekyll" /><category term="plugin" /><category term="meilisearch" /><summary type="html"><![CDATA[Hey there, Jekyll enthusiasts! 🌟 Introducing our latest innovation: a Jekyll plugin that integrates seamlessly with Meilisearch to bring you lightning-fast search capabilities!]]></summary></entry><entry><title type="html">Chesspop Live: A Fresh Name!</title><link href="https://unicolo.red/project/2025/03/17/chesspop-live-update.html" rel="alternate" type="text/html" title="Chesspop Live: A Fresh Name!" /><published>2025-03-17T00:00:00+00:00</published><updated>2025-03-17T00:00:00+00:00</updated><id>https://unicolo.red/project/2025/03/17/chesspop-live-update</id><content type="html" xml:base="https://unicolo.red/project/2025/03/17/chesspop-live-update.html"><![CDATA[<p>Last week, I shared the first version of my little chess project, originally
+called <em>Chessfield Live</em>
+(<a href="/projects/2025/03/13/introducing-chessfield-live.md.html">read it here</a>).
+Since then, things have evolved a bit, and I’m excited to give you an update:
+it’s now 🍿 <strong>Chesspop Live</strong>, with a new name, some fresh features, and the
+same 3D chess magic you loved. Let’s dive in!</p>
+
+<h2 id="a-new-name-chesspop-live-">A New Name: Chesspop Live 🍿</h2>
+
+<p>First off, why the name change? I originally went with <em>Chessfield Live</em> to tie
+it to my <a href="https://www.npmjs.com/package/chessfield">Chessfield</a> package, but I
+realized it wasn’t quite popping (pun intended) for casual chess fans like me.
+<em>Chesspop Live</em> is shorter, catchier, and works great in both English and
+French—perfect for grabbing some popcorn and enjoying a game! You can check it
+out live at <a href="https://chesspop.live">chesspop.live</a>.</p>
+
+<h2 id="sound-effects-feel-the-game">Sound Effects: Feel the Game</h2>
+
+<p>One of the coolest new additions is <strong>sound</strong>. Now, when you watch a game,
+you’ll hear the pieces pop! It’s a small touch, but it really brings that
+over-the-board vibe to your screen. I wanted <em>Chesspop</em> to feel alive, not just
+look it, and sound was the missing piece (pun intended again!).</p>
+
+<h2 id="same-3d-goodness-powered-by-chessfield">Same 3D Goodness, Powered by Chessfield</h2>
+
+<p>The core hasn’t changed: <em>Chesspop Live</em> still uses my
+<a href="https://www.npmjs.com/package/chessfield">Chessfield</a> package to render live
+games in 3D. It pulls streams from places like
+<a href="https://lichess.org/tv">Lichess.org</a>, so you can spectate real-time matches
+with a fresh, interactive twist. Whether it’s a blitz battle or a slow strategy
+showdown, it’s all there in glorious 3D.</p>
+
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>I’m thrilled with how <em>Chesspop Live</em> is shaping up, but there’s more to come!
+I’m thinking about adding options to pick specific streamers or games, maybe
+even some fun visual themes. Got ideas? I’d love to hear them—drop me a note via
+<a href="https://github.com/unicolored/chesspop.live/issues">GitHub issues</a>!</p>
+
+<h2 id="try-it-out">Try It Out</h2>
+
+<p>Head over to <a href="https://chesspop.live">chesspop.live</a> and give it a spin. The UI’s
+smooth, the 3D board’s popping, and now the sounds make it feel like you’re
+right at the table. Grab a snack, turn up your speakers, and enjoy the show! If
+you love what you see and want to support more chessy goodness, feel free to
+<a href="https://buymeacoffee.com/unicolored">buy me a coffee</a>—it keeps the popcorn
+flowing!</p>
+
+<p>Thanks for following along—stay tuned for more chessy updates!</p>
+
+<hr />
+
+<p><em>Built with love using <a href="https://www.npmjs.com/package/chessfield">Chessfield</a>,
+<a href="https://github.com/saadeghi/daisyui">DaisyUI</a>, and a sprinkle of popcorn flair
+from <a href="https://favicon.io">Favicon.io</a>.</em></p>]]></content><author><name></name></author><category term="project" /><category term="chess" /><category term="3d" /><category term="chesspop" /><category term="chessfield" /><summary type="html"><![CDATA[Say hello to Chesspop Live—a snappier name, sound effects, and the same 3D chess goodness. Check out the update!]]></summary></entry><entry><title type="html">Initial-sh v0.3.0 Hits NPM!</title><link href="https://unicolo.red/release/2025/03/15/initial-sh-v0.3.0-live.html" rel="alternate" type="text/html" title="Initial-sh v0.3.0 Hits NPM!" /><published>2025-03-15T15:00:00+00:00</published><updated>2025-03-15T15:00:00+00:00</updated><id>https://unicolo.red/release/2025/03/15/initial-sh-v0.3.0-live</id><content type="html" xml:base="https://unicolo.red/release/2025/03/15/initial-sh-v0.3.0-live.html"><![CDATA[<p>Big news! <code class="language-plaintext highlighter-rouge">initial-sh</code> v0.3.0 is now live on NPM 🎉. Grab this Quake-stylish
+console at
+<a href="https://www.npmjs.com/package/initial-sh">https://www.npmjs.com/package/initial-sh</a>
+and level up your webmaster game with retro flair 😄.</p>
+
+<ul>
+  <li><strong>Docs</strong>: Dive into details at
+<a href="https://unicolo.red/initial.term/">https://unicolo.red/initial.term/</a>.</li>
+  <li><strong>Repo</strong>: Check the source on
+<a href="https://github.com/unicolored/initial.term">https://github.com/unicolored/initial.term</a>.</li>
+</ul>
+
+<p>It’s lightweight, fun, and ready to roll—install it and start typin’! Happy
+coding! 🚀</p>]]></content><author><name></name></author><category term="release" /><summary type="html"><![CDATA[Big news! initial-sh v0.3.0 is now live on NPM 🎉. Grab this Quake-stylish console at https://www.npmjs.com/package/initial-sh and level up your webmaster game with retro flair 😄.]]></summary></entry><entry><title type="html">Chessfield Live: A New Way to Watch Online Chess</title><link href="https://unicolo.red/projects/2025/03/13/introducing-chessfield-live.md.html" rel="alternate" type="text/html" title="Chessfield Live: A New Way to Watch Online Chess" /><published>2025-03-13T00:00:00+00:00</published><updated>2025-03-13T00:00:00+00:00</updated><id>https://unicolo.red/projects/2025/03/13/introducing-chessfield-live.md</id><content type="html" xml:base="https://unicolo.red/projects/2025/03/13/introducing-chessfield-live.md.html"><![CDATA[<p>Hello, chess fans! 🚀 We’re excited to share <strong>Chessfield Live</strong>, a simple and
+engaging way to watch online chess games as they happen. Designed for
+enthusiasts who enjoy following live matches, Chessfield Live brings a bit of
+that over-the-board excitement right to your screen.</p>
+
+<h3 id="what-it-offers">What It Offers:</h3>
+
+<ul>
+  <li><strong>Live Match Viewing</strong>: Follow games in real time with an easy-to-use
+interface.</li>
+  <li><strong>Lichess Data</strong>: Connected to Lichess for seamless access to live games.</li>
+</ul>
+
+<p><img src="/assets/images/2025-03-13-introducing-chessfield-live.png" alt="Chessfield Live is Live" /></p>
+
+<h3 id="get-started">Get Started:</h3>
+
+<p>Visit <a href="https://chesspop.live/">Chessfield Live</a> to start watching games now.
+Whether you’re studying moves or just a fan of the game, it’s a neat tool to
+have in your chess kit.</p>
+
+<h3 id="explore--contribute">Explore &amp; Contribute:</h3>
+
+<p>Interested in the tech behind the scenes? Visit our
+<a href="https://github.com/unicolored/chessfield-live">GitHub repository</a> to learn more
+or contribute to the project.</p>
+
+<p>Happy watching, and enjoy the games! 🍿👑</p>]]></content><author><name></name></author><category term="projects" /><summary type="html"><![CDATA[Hello, chess fans! 🚀 We’re excited to share Chessfield Live, a simple and engaging way to watch online chess games as they happen. Designed for enthusiasts who enjoy following live matches, Chessfield Live brings a bit of that over-the-board excitement right to your screen.]]></summary></entry><entry><title type="html">Chessfield is public!</title><link href="https://unicolo.red/project/chessfield/2025/03/12/chessfield-1-2-0-release.html" rel="alternate" type="text/html" title="Chessfield is public!" /><published>2025-03-12T00:00:00+00:00</published><updated>2025-03-12T00:00:00+00:00</updated><id>https://unicolo.red/project/chessfield/2025/03/12/chessfield-1-2-0-release</id><content type="html" xml:base="https://unicolo.red/project/chessfield/2025/03/12/chessfield-1-2-0-release.html"><![CDATA[<p>I’m thrilled to announce that <strong>Chessfield 1.2.0</strong> is out as of March 12, 2025!
+🎉 This isn’t just any update—it’s the moment Chessfield goes public! 😊</p>
+
+<p>With 1.2.0, we’ve opened up the
+<a href="https://github.com/unicolored/chessfield">GitHub repo</a> for everyone to explore
+and contribute to. Plus, the npm package is now live and (fingers crossed 🤞)
+working smoothly. This is the first public release, so rather than a laundry
+list of features, it’s all about getting Chessfield out into the world and into
+your hands. 🚀</p>
+
+<p><img src="/assets/images/chessfield-views.jpg" alt="Chessfield preview" /></p>
+
+<p>Want to dive in? Head over to the official project page on our blog at
+<a href="/chessfield">https://unicolo.red/chessfield</a>. That’s where you’ll find more
+info, links to the repo and package, and a chance to join the chess fun! ♟️</p>
+
+<p>Big thanks to everyone who’s been cheering this on—let’s build something awesome
+together! 🙌</p>
+
+<p>— Gilles</p>]]></content><author><name></name></author><category term="project" /><category term="chessfield" /><summary type="html"><![CDATA[I’m thrilled to announce that Chessfield 1.2.0 is out as of March 12, 2025! 🎉 This isn’t just any update—it’s the moment Chessfield goes public! 😊]]></summary></entry><entry><title type="html">New Digs: unicolo.red Takes Over</title><link href="https://unicolo.red/2025/03/11/new-digs-unicolored-com-takes-over.html" rel="alternate" type="text/html" title="New Digs: unicolo.red Takes Over" /><published>2025-03-11T00:00:00+00:00</published><updated>2025-03-11T00:00:00+00:00</updated><id>https://unicolo.red/2025/03/11/new-digs-unicolored-com-takes-over</id><content type="html" xml:base="https://unicolo.red/2025/03/11/new-digs-unicolored-com-takes-over.html"><![CDATA[<p>Hey folks, Big news: our blog’s moved to <a href="https://unicolo.red">unicolo.red</a>. The
+old haunt, gilles.blog, was hitting the wallet harder than a cloud bill after
+forgetting to shut down a VM. So, we grabbed a sleeker domain and kept the
+Jekyll + GitHub Pages combo rolling.</p>
+
+<p>Everything’s migrated—no broken links here (we hope). If you’ve got gilles.blog
+bookmarked, swap it out for unicolo.red. What do you think of the new spot? And
+seriously, what’s the wildest domain price you’ve seen? We need stories to
+justify this switch.</p>
+
+<p>— Gilles</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Hey folks, Big news: our blog’s moved to unicolo.red. The old haunt, gilles.blog, was hitting the wallet harder than a cloud bill after forgetting to shut down a VM. So, we grabbed a sleeker domain and kept the Jekyll + GitHub Pages combo rolling.]]></summary></entry><entry><title type="html">Initial commit</title><link href="https://unicolo.red/developer/journey/2024/03/06/initial-commit.html" rel="alternate" type="text/html" title="Initial commit" /><published>2024-03-06T15:00:00+00:00</published><updated>2024-03-06T15:00:00+00:00</updated><id>https://unicolo.red/developer/journey/2024/03/06/initial-commit</id><content type="html" xml:base="https://unicolo.red/developer/journey/2024/03/06/initial-commit.html"><![CDATA[<p>Gilles here! 🎉 I’m about to embark on a coding adventure, and you’re invited
+along for the ride. I’ll be sharing projects that push the boundaries,
+experiments that keep me on my toes, and open source collaborations that make
+the heart sing.</p>
+
+<p>Expect a mix of triumphs, “aha” moments, and yes, the occasional code-induced
+headache. 🤓 It’s all part of the journey, and I’m here for every line of it.</p>
+
+<p>Let’s see how far we can go together!</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"> <span class="kd">class</span> <span class="nc">DevDiary</span> <span class="p">{</span> <span class="k">private</span> <span class="nx">diaryEntries</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nf">constructor</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">diaryEntries</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="s2">`🚀 Buckle up, we're just getting started!`</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="c1">// Let's fill this diary with code, learnings, and a sprinkle of fun! }</span></code></pre></figure>
+
+<p><img src="" alt="A vibrant workspace filled with code, colors, and a cup of coffee" /></p>
+
+<p>Stay tuned, and don’t forget to share your own dev tales in the comments below.
+Let’s make this a corner of the internet where code and creativity collide! 😄🚀</p>]]></content><author><name></name></author><category term="developer" /><category term="journey" /><summary type="html"><![CDATA[Gilles here! 🎉 I’m about to embark on a coding adventure, and you’re invited along for the ride. I’ll be sharing projects that push the boundaries, experiments that keep me on my toes, and open source collaborations that make the heart sing.]]></summary></entry></feed>
