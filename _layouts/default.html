@@ -1,38 +1,44 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>{{ site.title }}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    {%- seo -%}
-    {%- feed_meta -%}
-    <link rel="stylesheet" href="/assets/css/style.css"/>
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-    {% include umami_analytics.html %}
-</head>
+{%- include head.html -%}
+
 <body>
 
-<!-- Breadcrumb -->
-<nav class="breadcrumb" aria-label="breadcrumb">
-    <ol class="flex items-center space-x-2 text-gray-600">
-        <li><a href="/" class="hover:text-blue-500">{{ site.title }}</a></li>
-        {% if page.url != '/' %}
-        <li class="flex items-center">
-            <span class="mx-2">></span>
-            <a href="{{ page.url }}" class="hover:text-blue-500">{{ page.title }}</a>
-        </li>
-        {% endif %}
-    </ol>
-</nav>
+<wa-page view="desktop" navigation-placement="start" style="--header-height: 57.59375px; --subheader-height: 57.59375px; --banner-height: 57.59375px; --footer-height: 57.59375px;">
+    {%- include header.html -%}
 
-{% include meilisearch-input.html %}
+    <header class="slot-content" slot="main-header">
+        <!-- Breadcrumb -->
+        <div class="m-auto px-12 py-4">
+                <!-- ... -->
+            <wa-breadcrumb>
+                <wa-breadcrumb-item href="/">Home</wa-breadcrumb-item>
 
-<div class="p-4">
-    <main>{{ content }}</main>
-</div>
+                {% if page.url != '/' %}
+                <wa-breadcrumb-item href="{{ page.url }}">{{ page.title }}</wa-breadcrumb-item>
+                {% endif %}
+            </wa-breadcrumb>
+        </div>
+    </header>
+    <div class="slot-content" slot="">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </div>
+    <footer class="slot-content" slot="main-footer">
+    </footer>
+    <div class="slot-content" slot="aside">
+    </div>
+
+        {%- include footer.html -%}
+</wa-page>
+
+
+
 
 {% include initial-sh.html %}
+
 </body>
+
 </html>

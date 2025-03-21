@@ -20,7 +20,7 @@ that over-the-board excitement right to your screen.
 
 ### Get Started:
 
-Visit [Chessfield Live](https://chessfield.live/) to start watching games now.
+Visit [Chessfield Live](https://chesspop.live/) to start watching games now.
 Whether you're studying moves or just a fan of the game, it's a neat tool to
 have in your chess kit.
 

@@ -1,0 +1,30 @@
+<footer class="slot-content" slot="footer">
+
+  <wa-stack class="w-full mt-12 mb-24">
+
+    <hr class="border-1 border-red-200">
+    <h2 class="text-center w-full" style="color:var(--wa-color-brand)">{{ site.title | escape }}</h2>
+
+    <!--  <ul class="contact-list">-->
+    <!--    <li class="p-name">-->
+    <!--      {%- if site.author -%}-->
+    <!--      {{ site.author | escape }}-->
+    <!--      {%- else -%}-->
+    <!--      {{ site.title | escape }}-->
+    <!--      {%- endif -%}-->
+    <!--    </li>-->
+    <!--    {%- if site.email -%}-->
+    <!--    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>-->
+    <!--    {%- endif -%}-->
+    <!--  </ul>-->
+
+    <!--  <div class="footer-social">-->
+    <!--&lt;!&ndash;    {%- include social.html -%}&ndash;&gt;-->
+    <!--  </div>-->
+
+    <div class="prose m-auto">
+      <p>{{- site.description | escape -}}</p>
+    </div>
+  </wa-stack>
+
+</footer>

@@ -1,12 +1,18 @@
 
 <!-- Search Input -->
-<div class="border m-6 mb-6 p-4">
-  <form id="formsearch">
-    <label for="search"></label>
-    <input type="text" id="search" class="border p-2 w-full" placeholder="Rechercher...">
-    <button type="submit" id="search-button">Recherche</button>
-  </form>
-  <div id="results" class="mt-2 border p-4">Les résultats apparaîtront ici.</div>
+
+<div class="wa-grid w-full px-12">
+  <div class="wa-stack " >
+    <form id="formsearch">
+      <div class="wa-flank:end wa-gap-xs">
+        <wa-input type="text" id="search" placeholder="Rechercher...">
+          <wa-icon slot="prefix" name="magnifying-glass"></wa-icon>
+        </wa-input>
+        <wa-button type="submit" id="search-button">Recherche</wa-button>
+      </div>
+    </form>
+    <wa-stack id="results" class="wa-gap-m"></wa-stack>
+  </div>
 </div>
 
 <!-- Meilisearch JS SDK -->
@@ -37,11 +43,12 @@
       }
 
       document.getElementById('results').innerHTML = results.hits
-        .map(hit => `<p><a href="${hit.url}" class="text-blue-500 hover:underline">${hit.title}</a></p>`)
+        .map(hit => `<wa-card><a href="${hit.url}" >${hit.title}</a></wa-card>`)
         .join('');
     } catch (error) {
       console.error('Search error:', error);
-      document.getElementById('results').innerHTML = '<p class="text-red-500">Search failed. Please try again.</p>';
+      document.getElementById('results').innerHTML = '<p class="text-red-500 p-4">Search failed. Please try again.</p>';
     }
   });
 </script>
+

@@ -1,38 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ site.title }}</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  {%- seo -%}
-  {%- feed_meta -%}
-  <link rel="stylesheet" href="/assets/css/style.css"/>
+---
+layout: default
+---
+<article class="prose lg:prose-lg m-auto">
 
-  {% include umami_analytics.html %}
-</head>
-<body>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
 
-<!-- Breadcrumb -->
-<nav class="breadcrumb" aria-label="breadcrumb">
-  <ol class="flex items-center space-x-2 text-gray-600">
-    <li><a href="/" class="hover:text-blue-500">{{ site.title }}</a></li>
-    {% if page.url != '/' %}
-    <li class="flex items-center">
-      <span class="mx-2">></span>
-      <a href="{{ page.url }}" class="hover:text-blue-500">{{ page.title }}</a>
-    </li>
-    {% endif %}
-  </ol>
-</nav>
+  <div class="post-content">
+    {{ content }}
+  </div>
 
-{% include meilisearch-input.html %}
-
-<div class="p-4">
-  <main>{{ content }}</main>
-</div>
-
-{% include initial-sh.html %}
-</body>
-</html>
+</article>
