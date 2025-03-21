@@ -1,0 +1,73 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
+      NODE_ENV: development
+      MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
+      MEILISEARCH_SEARCH_API_KEY: ${{ secrets.MEILISEARCH_SEARCH_API_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+#      - name: Install Dependencies
+#        run: npm install --force
+
+#      - name: Verify PostCSS installation
+#        run: |
+#          npm list postcss postcss-cli || echo "❌ PostCSS or CLI not installed!"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      - name: Build Jekyll
+        run: |
+          echo "meilisearch:" > _config.secrets.yml
+          echo "  api_key: $MEILISEARCH_API_KEY" >> _config.secrets.yml
+          echo "  search_api_key: $MEILISEARCH_SEARCH_API_KEY" >> _config.secrets.yml
+          npm run build:site:prod
+
+#      - name: Build CSS
+#        run: |
+#          mkdir -p _site/assets/css
+#          ls -la assets/css/style.css || echo "❌ Input CSS file not found!"
+#          npm run build:css || true
+#          ls -la _site/assets/css/style.css || echo "❌ Output CSS file not found!"
+
+      - name: Check _site directory
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "Error: _site directory not found!"
+            exit 1
+          fi
+
+      - name: Test links with HTMLProofer
+        run:
+          bundle exec htmlproofer ./_site --check-external-hash --ignore-urls
+          "/localhost/"
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: gh-pages

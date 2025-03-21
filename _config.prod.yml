@@ -1,0 +1,7 @@
+# DO NOT PUT SECRETS IN HERE
+meilisearch:
+  url: 'https://meilisearch.wrkng.io'
+  index_name: 'unicolored_prod'
+
+analytics:
+  enabled: true
