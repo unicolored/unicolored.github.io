@@ -1,0 +1,47 @@
+
+<!-- Search Input -->
+<div class="border m-6 mb-6 p-4">
+  <form id="formsearch">
+    <label for="search"></label>
+    <input type="text" id="search" class="border p-2 w-full" placeholder="Rechercher...">
+    <button type="submit" id="search-button">Recherche</button>
+  </form>
+  <div id="results" class="mt-2 border p-4">Les résultats apparaîtront ici.</div>
+</div>
+
+<!-- Meilisearch JS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
+<script>
+  const meilisearchConfig = {
+    host: "{{ site.meilisearch.url | default: site.meilisearch.url | default: 'http://localhost:7700' }}",
+    apiKey: "{{ site.meilisearch.search_api_key | default: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f' }}"
+  };
+  const client = new MeiliSearch(meilisearchConfig);
+  const index = client.index('{{site.meilisearch.index_name}}');
+
+  document.getElementById('formsearch').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('search');
+    const query = input.value;
+
+    if (query.length < 2) {
+      document.getElementById('results').innerHTML = '';
+      return;
+    }
+
+    try {
+      const results = await index.search(query);
+
+      if (typeof umami !== 'undefined') {
+        umami.track('Recherche', { query: query, resultsCount: results.hits.length });
+      }
+
+      document.getElementById('results').innerHTML = results.hits
+        .map(hit => `<p><a href="${hit.url}" class="text-blue-500 hover:underline">${hit.title}</a></p>`)
+        .join('');
+    } catch (error) {
+      console.error('Search error:', error);
+      document.getElementById('results').innerHTML = '<p class="text-red-500">Search failed. Please try again.</p>';
+    }
+  });
+</script>

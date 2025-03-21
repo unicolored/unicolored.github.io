@@ -1,7 +1,5 @@
 {
-  "name": "unicolored.github.io",
-  "version": "1.0.0",
-  "description": "Welcome to **The Red Journey**, my creative space at [unicolo.red](https://unicolo.red). This Jekyll-powered blog, hosted on GitHub Pages, is where I share projects, ideas, and experiments—tinted with a red-hued twist.",
+  "version": "0.2.0",
   "scripts": {
     "build:css": "npx postcss assets/css/style.css -o _site/assets/css/style.css",
     "watch:css": "npx postcss assets/css/style.css -o _site/assets/css/style.css --watch",
@@ -12,7 +10,9 @@
     "build:site": "bundle exec jekyll build --config _config.yml",
     "build:site:local": "bundle exec jekyll build --config _config.yml,_config.local.yml",
     "build:site:prod": "bundle exec jekyll build --config _config.yml,_config.prod.yml,_config.secrets.yml",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new:chapter": "bundle exec jekyll compose --collection \"chapters\"",
+    "new:lesson": "bundle exec jekyll compose --collection \"lessons\"",
+    "new:question": "bundle exec jekyll compose --collection \"questions\""
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.14",

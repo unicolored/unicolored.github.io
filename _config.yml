@@ -1,85 +1,30 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-# https://github.com/jekyll/minima/tree/2.5-stable
 title: The Red Journey
+baseurl: '/' # the subpath of your site, e.g. /blog
+url: 'https://unicolo.red' # the base hostname & protocol for your site, e.g. http://example.com
+domain: unicolo.red
 description: >- # this means to ignore newlines until "baseurl:"
   Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey
   red with code, ideas, and life.
-baseurl: '' # the subpath of your site, e.g. /blog
-url: 'https://unicolo.red' # the base hostname & protocol for your site, e.g. http://example.com
-show_excerpts: true
-#google_analytics: G-V55V6NLT12
 twitter_username: gilleshoarau
 github_username: unicolored
-#dribbble_username: jekyll
-#facebook_username: jekyll
-#flickr_username: jekyll
-#instagram_username: jekyll
-#linkedin_username: jekyll
-#pinterest_username: jekyll
-#youtube_username: jekyll
-#googleplus_username: +jekyll
-#rss: rss
-plugins_dir: _plugins
-#whitelist:
-#  - meilisearch_indexer
+rss: rss
 collections_dir: contents
 collections:
   projects:
     output: true
-header_pages:
-  - about.markdown
-# Minima date format
-# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
-minima:
-  date_format: '%b %-d, %Y'
-# Build settings
-theme: minima
-safe: false
-#theme: jekyll-theme-minimal
-
+safe: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-meilisearch
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-#exclude:
-#  - bin/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+postcss:
+  cache: false
+exclude:
+  - .idea
+  - bin
+  - package.json
+  - package-lock.json
 
 jekyll_compose:
   default_front_matter:
@@ -97,6 +42,7 @@ jekyll_compose:
       sitemap: false
 
 meilisearch:
+  disable_in_development: true
   url: 'http://localhost:7700'
   api_key: 'b3f0f337267b9fda8d9e39a1975ccc96c8003bd25ad6ddaa058cf67dd19c0fc6'
   search_api_key: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f'
