@@ -27,12 +27,12 @@ jobs:
         with:
           node-version: '22'
 
-#      - name: Install Dependencies
-#        run: npm install --force
+      #      - name: Install Dependencies
+      #        run: npm install --force
 
-#      - name: Verify PostCSS installation
-#        run: |
-#          npm list postcss postcss-cli || echo "❌ PostCSS or CLI not installed!"
+      #      - name: Verify PostCSS installation
+      #        run: |
+      #          npm list postcss postcss-cli || echo "❌ PostCSS or CLI not installed!"
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -47,12 +47,12 @@ jobs:
           echo "  search_api_key: $MEILISEARCH_SEARCH_API_KEY" >> _config.secrets.yml
           npm run build:site:prod
 
-#      - name: Build CSS
-#        run: |
-#          mkdir -p _site/assets/css
-#          ls -la assets/css/style.css || echo "❌ Input CSS file not found!"
-#          npm run build:css || true
-#          ls -la _site/assets/css/style.css || echo "❌ Output CSS file not found!"
+      #      - name: Build CSS
+      #        run: |
+      #          mkdir -p _site/assets/css
+      #          ls -la assets/css/style.css || echo "❌ Input CSS file not found!"
+      #          npm run build:css || true
+      #          ls -la _site/assets/css/style.css || echo "❌ Output CSS file not found!"
 
       - name: Check _site directory
         run: |
