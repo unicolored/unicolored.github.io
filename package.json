@@ -1,6 +1,6 @@
 {
   "name": "unicolored.github.io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Welcome to **The Red Journey**, my creative space at [unicolo.red](https://unicolo.red). This Jekyll-powered blog, hosted on GitHub Pages, is where I share projects, ideas, and experiments—tinted with a red-hued twist.",
   "scripts": {
     "build:css": "npx postcss assets/css/style.css -o _site/assets/css/style.css",
@@ -25,5 +25,6 @@
     "postcss-import": "^16.1.0",
     "prettier": "^3.5.3",
     "tailwindcss": "^4.0.14"
-  }
+  },
+  "packageManager": "yarn@4.7.0"
 }
