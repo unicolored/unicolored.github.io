@@ -18,8 +18,9 @@ your hands. 🚀
 ![Chessfield preview](/assets/images/chessfield-views.jpg)
 
 Want to dive in? Head over to the official project page on our blog at
-[https://unicolo.red/chessfield](/chessfield). That’s where you’ll find more
-info, links to the repo and package, and a chance to join the chess fun! ♟️
+[https://unicolo.red/chessfield](https://unicolo.red/chessfield). That’s where
+you’ll find more info, links to the repo and package, and a chance to join the
+chess fun! ♟️
 
 Big thanks to everyone who’s been cheering this on—let’s build something awesome
 together! 🙌

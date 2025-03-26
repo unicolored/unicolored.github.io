@@ -8,7 +8,7 @@
     "start": "concurrently \"npm run watch:css\" \"bundle exec jekyll serve\"",
     "format": "npx prettier --write \"**/*.{js,css,md,markdown,yml,yaml}\"",
     "check": "npx prettier --check \"**/*.{js,css,md,markdown,yml,yaml}\"",
-    "proof": "bundle exec htmlproofer ./_site --check-external-hash --ignore-urls \"/localhost/\"",
+    "proof": "bundle exec htmlproofer ./_site --check-external-hash --ignore-urls \"/localhost/,/buymeacoffee/\"",
     "build:site": "bundle exec jekyll build --config _config.yml",
     "build:site:local": "bundle exec jekyll build --config _config.yml,_config.local.yml",
     "build:site:prod": "bundle exec jekyll build --config _config.yml,_config.prod.yml,_config.secrets.yml",

@@ -23,7 +23,5 @@ this.diaryEntries.push(`🚀 Buckle up, we're just getting started!`); }
 // Let's fill this diary with code, learnings, and a sprinkle of fun! }
 {% endhighlight %}
 
-![A vibrant workspace filled with code, colors, and a cup of coffee]()
-
 Stay tuned, and don't forget to share your own dev tales in the comments below.
 Let's make this a corner of the internet where code and creativity collide! 😄🚀
