@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://unicolo.red/feed.xml" rel="self" type="application/atom+xml" /><link href="https://unicolo.red/" rel="alternate" type="text/html" /><updated>2025-03-21T22:21:00+00:00</updated><id>https://unicolo.red/feed.xml</id><title type="html">The Red Journey</title><subtitle>Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</subtitle><entry><title type="html">Supercharge Your Jekyll Site with Our Meilisearch Plugin</title><link href="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html" rel="alternate" type="text/html" title="Supercharge Your Jekyll Site with Our Meilisearch Plugin" /><published>2025-03-21T11:06:00+00:00</published><updated>2025-03-21T11:06:00+00:00</updated><id>https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin</id><content type="html" xml:base="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html"><![CDATA[<p>Hey there, Jekyll enthusiasts! 🌟 Introducing our latest innovation: a Jekyll
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://unicolo.red/feed.xml" rel="self" type="application/atom+xml" /><link href="https://unicolo.red/" rel="alternate" type="text/html" /><updated>2025-03-26T21:09:21+00:00</updated><id>https://unicolo.red/feed.xml</id><title type="html">The Red Journey</title><subtitle>Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</subtitle><entry><title type="html">Supercharge Your Jekyll Site with Our Meilisearch Plugin</title><link href="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html" rel="alternate" type="text/html" title="Supercharge Your Jekyll Site with Our Meilisearch Plugin" /><published>2025-03-21T11:06:00+00:00</published><updated>2025-03-21T11:06:00+00:00</updated><id>https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin</id><content type="html" xml:base="https://unicolo.red/project/2025/03/21/supercharge-your-jekyll-site-with-our-meilisearch-plugin.html"><![CDATA[<p>Hey there, Jekyll enthusiasts! 🌟 Introducing our latest innovation: a Jekyll
 plugin that integrates seamlessly with Meilisearch to bring you lightning-fast
 search capabilities!</p>
 
@@ -145,8 +145,9 @@ your hands. 🚀</p>
 <p><img src="/assets/images/chessfield-views.jpg" alt="Chessfield preview" /></p>
 
 <p>Want to dive in? Head over to the official project page on our blog at
-<a href="/chessfield">https://unicolo.red/chessfield</a>. That’s where you’ll find more
-info, links to the repo and package, and a chance to join the chess fun! ♟️</p>
+<a href="https://unicolo.red/chessfield">https://unicolo.red/chessfield</a>. That’s where
+you’ll find more info, links to the repo and package, and a chance to join the
+chess fun! ♟️</p>
 
 <p>Big thanks to everyone who’s been cheering this on—let’s build something awesome
 together! 🙌</p>
@@ -177,8 +178,6 @@ headache. 🤓 It’s all part of the journey, and I’m here for every line of 
 <span class="k">this</span><span class="p">.</span><span class="nx">diaryEntries</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="s2">`🚀 Buckle up, we're just getting started!`</span><span class="p">);</span> <span class="p">}</span>
 
 <span class="c1">// Let's fill this diary with code, learnings, and a sprinkle of fun! }</span></code></pre></figure>
-
-<p><img src="" alt="A vibrant workspace filled with code, colors, and a cup of coffee" /></p>
 
 <p>Stay tuned, and don’t forget to share your own dev tales in the comments below.
 Let’s make this a corner of the internet where code and creativity collide! 😄🚀</p>]]></content><author><name></name></author><category term="developer" /><category term="journey" /><summary type="html"><![CDATA[Gilles here! 🎉 I’m about to embark on a coding adventure, and you’re invited along for the ride. I’ll be sharing projects that push the boundaries, experiments that keep me on my toes, and open source collaborations that make the heart sing.]]></summary></entry></feed>
