@@ -5,7 +5,7 @@
     <div class="wrapper text-center p-5 w-full">
       {%- assign default_paths = site.pages | map: "path" -%}
       {%- assign page_paths = site.header_pages | default: default_paths -%}
-      <a class="site-title wa-heading-3xl" rel="author" href="{{ "https://unicolo.red/" | relative_url }}">{{ site.title | escape }}</a>
+      <a class="site-title wa-heading-3xl" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     </div>
 </header>
 <header class="slot-content" slot="banner">
