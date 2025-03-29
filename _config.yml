@@ -2,9 +2,9 @@ title: The Red Journey
 baseurl: '/' # the subpath of your site, e.g. /blog
 url: 'https://unicolo.red' # the base hostname & protocol for your site, e.g. http://example.com
 domain: unicolo.red
-description: >- # this means to ignore newlines until "baseurl:"
-  Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey
-  red with code, ideas, and life.
+#description: >- # this means to ignore newlines
+#  Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey
+#  red with code, ideas, and life.
 twitter_username: gilleshoarau
 github_username: unicolored
 header_pages:

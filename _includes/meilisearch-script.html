@@ -1,0 +1,195 @@
+<!-- Meilisearch JS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
+<script>
+  const meilisearchConfig = {
+    host: "{{ site.meilisearch.url | default: site.meilisearch.url | default: 'http://localhost:7700' }}",
+    apiKey:
+      "{{ site.meilisearch.search_api_key | default: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f' }}",
+  };
+  // Initialize MeiliSearch client and index
+  const client = new MeiliSearch(meilisearchConfig);
+  const index = client.index('{{site.meilisearch.index_name}}');
+
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId); // Clear any existing timeout
+      timeoutId = setTimeout(() => func.apply(this, args), delay); // Set new timeout
+    };
+  }
+
+  function throttle(func, limit) {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  }
+
+  const searchInput = document.getElementById('search');
+  const instantResults = document.getElementById('instantResults');
+  const searchIcon = document.getElementById('search-icon');
+  const spinnerIcon = document.getElementById('spinner-icon');
+  const searchForm = document.getElementById('formsearch');
+  const searchButton = document.getElementById('search-button');
+  const searchCache = {};
+
+  const renderInstantResults = (hits) => {
+    return hits
+      .map(
+        (hit) =>
+          `<p class="result-item p-2 hover:bg-gray-100 cursor-pointer"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit._formatted.title || hit.title}</a></p>`,
+      )
+      .join('');
+  };
+
+  const performSearch = throttle(async (query) => {
+    if (searchCache[query]) {
+      instantResults.innerHTML = searchCache[query];
+      instantResults.classList.remove('hidden');
+      return;
+    }
+
+    searchIcon.style.display = 'none';
+    spinnerIcon.style.display = 'block';
+    instantResults.classList.remove('hidden');
+
+    try {
+      const results = await index.search(query, {
+        limit: 5,
+        attributesToHighlight: ['title'], // Highlight the 'title' field
+        highlightPreTag: '<mark>',
+        highlightPostTag: '</mark>',
+      });
+      const html = renderInstantResults(results.hits);
+      searchCache[query] = html;
+      instantResults.innerHTML = html;
+      instantResults.classList.remove('hidden');
+    } catch (error) {
+      console.error('Search error:', error);
+      instantResults.innerHTML =
+        '<p class="text-red-500 p-2">Search failed. Please try again.</p>';
+      instantResults.classList.remove('hidden');
+    } finally {
+      spinnerIcon.style.display = 'none';
+      searchIcon.style.display = 'block';
+    }
+  }, 1500);
+
+  // Highlight and navigate results with arrow keys
+  let selectedIndex = -1;
+
+  const updateHighlight = () => {
+    const items = instantResults.querySelectorAll('.result-item');
+    items.forEach((item, index) => {
+      item.classList.toggle('bg-gray-200', index === selectedIndex);
+      item.classList.toggle('hover:bg-gray-100', index !== selectedIndex);
+    });
+  };
+
+  let selectedLink = null;
+
+  const navigateResults = (e) => {
+    const items = instantResults.querySelectorAll('.result-item');
+    console.log('⭐️ items.length', items.length);
+    console.log(
+      "⭐️ instantResults.classList.contains('hidden')",
+      instantResults.classList.contains('hidden'),
+    );
+    // if (!items.length || instantResults.classList.contains('hidden')) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      selectedLink = items[selectedIndex]?.querySelector('a');
+      console.log(selectedLink);
+      updateHighlight();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, -1);
+      selectedLink = items[selectedIndex]?.querySelector('a');
+      console.log(selectedLink);
+      updateHighlight();
+    } else if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission
+      e.stopPropagation();
+      console.log('🟢', selectedLink);
+      // console.log(selectedIndex)
+      // if (selectedIndex >= 0) {
+      //   const selectedLink = items[selectedIndex].querySelector('a');
+      //   console.log(selectedLink)
+      if (selectedLink) {
+        window.location.href = selectedLink; // Navigate to selected link
+        resetResults();
+        // }
+      } else {
+        searchForm.submit(); // Fallback to form submission if no result selected
+      }
+    }
+  };
+
+  const resetResults = () => {
+    instantResults.innerHTML = '';
+    instantResults.classList.add('hidden');
+    spinnerIcon.style.display = 'none';
+    searchIcon.style.display = 'block';
+    selectedIndex = -1;
+  };
+
+  // Event listeners
+  searchInput.addEventListener('keydown', (e) => {
+    const query = e.target.value.trim();
+
+    console.log(query);
+
+    if (query.length < 2) {
+      resetResults();
+      return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
+      console.log('Hit!', e.key);
+      navigateResults(e);
+    } else {
+      performSearch(query);
+      selectedIndex = -1; // Reset selection on new search
+    }
+  });
+
+  // Prevent default form submission on Enter key
+  searchForm.addEventListener('submit', (e) => {
+    // Prevent submission unless triggered by button click or explicit form.submit()
+    // console.log('🟣',e.submitter)
+    // if (e.submitter !== searchButton) {
+    e.preventDefault();
+    // }
+  });
+
+  // Handle button click explicitly (optional, for clarity)
+  searchButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent double submission handling
+    e.stopPropagation();
+    const query = searchInput.value.trim();
+    if (query.length >= 2) {
+      searchForm.submit(); // Trigger form submission
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    console.log('document click');
+    if (!searchInput.contains(e.target) && !instantResults.contains(e.target)) {
+      resetResults();
+    }
+  });
+
+  instantResults.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link) {
+      window.location.href = link.href;
+      resetResults();
+    }
+  });
+</script>

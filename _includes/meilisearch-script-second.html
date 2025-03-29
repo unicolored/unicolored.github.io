@@ -1,0 +1,61 @@
+<script>
+  // DOM element for results
+  const resultsDiv = document.getElementById('results');
+
+  // Function to get query parameter 's' from URL
+  const getQueryParam = (param) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || '';
+  };
+
+  // Function to render search results as HTML
+  const renderResults = (hits) => {
+    if (hits.length === 0) {
+      return '<p class="text-gray-500">No results found.</p>';
+    }
+    return hits
+      .map(
+        (hit) =>
+          `<p><a href="${hit.url}" class="text-blue-500 hover:underline">${hit.title}</a></p>`,
+      )
+      .join('');
+  };
+
+  // Function to load search results
+  const loadSearchResults = async (query) => {
+    // Show loading state
+    resultsDiv.innerHTML = '<p class="text-gray-500">Loading...</p>';
+
+    try {
+      const results = await index.search(query);
+
+      // Track search event if umami is available
+      if (typeof umami !== 'undefined') {
+        umami.track('Recherche', {
+          query: query,
+          resultsCount: results.hits.length,
+        });
+      }
+
+      // Render results
+      resultsDiv.innerHTML = renderResults(results.hits);
+    } catch (error) {
+      console.error('Search error:', error);
+      resultsDiv.innerHTML =
+        '<p class="text-red-500">Search failed. Please try again.</p>';
+    }
+  };
+
+  // Load results when the page loads
+  document.addEventListener('DOMContentLoaded', () => {
+    const query = getQueryParam('s').trim();
+
+    // Only search if query is valid
+    if (query.length >= 2) {
+      loadSearchResults(query);
+    } else {
+      resultsDiv.innerHTML =
+        '<p class="text-gray-500">Please enter a search term of at least 2 characters.</p>';
+    }
+  });
+</script>

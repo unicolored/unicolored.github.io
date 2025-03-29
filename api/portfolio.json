@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /api/portfolio.json
+---
+{% assign projects = site.projects | where: "category", 'photos' %}
+{{ projects | jsonify }}
