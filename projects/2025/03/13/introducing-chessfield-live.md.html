@@ -20,17 +20,26 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-13T00:00:00+00:00","datePublished":"2025-03-13T00:00:00+00:00","description":"Hello, chess fans! 🚀 We’re excited to share Chessfield Live, a simple and engaging way to watch online chess games as they happen. Designed for enthusiasts who enjoy following live matches, Chessfield Live brings a bit of that over-the-board excitement right to your screen.","headline":"Chessfield Live: A New Way to Watch Online Chess","mainEntityOfPage":{"@type":"WebPage","@id":"https://unicolo.red/projects/2025/03/13/introducing-chessfield-live.md.html"},"url":"https://unicolo.red/projects/2025/03/13/introducing-chessfield-live.md.html"}</script>
 <!-- End Jekyll SEO tag -->
+<meta name="description" content="">
+
+
 <!--    <link rel="stylesheet" href="/assets/main.css">-->
     <link rel="stylesheet" href="/assets/css/style.css"/>
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/default.css" />
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/webawesome.css" />
     <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/webawesome.loader.js"></script>
 
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/glossy.css" />
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/brand/red.css" />
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/mellow/typography.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/glossy.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/brand/red.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/mellow/typography.css" />
 
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/utilities/fouce.css" /><link type="application/atom+xml" rel="alternate" href="https://unicolo.red/feed.xml" title="The Red Journey" /><!---->
+<!--    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/utilities/fouce.css" />--><link type="application/atom+xml" rel="alternate" href="https://unicolo.red/feed.xml" title="The Red Journey" /><!---->
+
+    <script
+      data-proofer-ignore
+      src="https://kit.fontawesome.com/19be47d78a.js"
+      crossorigin="anonymous"
+    ></script>
 
     
 
@@ -58,86 +67,86 @@
 
 
 <header class="slot-content" slot="header">
-    <div class="wrapper text-center p-5 w-full"><a class="site-title wa-heading-3xl" rel="author" href="https://unicolo.red/">The Red Journey</a>
-    </div>
-</header>
-<header class="slot-content" slot="banner"><div class="p-4">
-        <nav class="wa-cluster"></nav>
-      </div></header>
+<!--    <div class="wrapper text-center p-5 w-full">-->
+<!---->
+<!---->
+<!--      <a class="site-title wa-heading-3xl" rel="author" href="/">The Red Journey</a>-->
+<!--    </div>-->
 
-<div class="slot-content" slot="subheader">
-  
-<!-- Search Input -->
+   <!-- Breadcrumb -->
+    <div class="flex justify-around p-4 w-full">
 
-<div class="wa-grid w-full px-12">
-  <div class="wa-stack " >
-    <form id="formsearch">
-      <div class="wa-flank:end wa-gap-xs">
-        <wa-input type="text" id="search" placeholder="Rechercher...">
-          <wa-icon slot="prefix" name="magnifying-glass"></wa-icon>
-        </wa-input>
-        <wa-button type="submit" id="search-button">Recherche</wa-button>
-      </div>
-    </form>
-    <wa-stack id="results" class="wa-gap-m"></wa-stack>
+     <!-- ... -->
+<div class="grow">
+  <wa-breadcrumb>
+    <wa-breadcrumb-item href="/">
+        <span class="wa-heading-xl text-red-800 hover:text-red-700">
+        <i class="fa-kit fa-unicolored fa-xl"></i> The Red Journey
+          </span>
+    </wa-breadcrumb-item>
+
+    <!--       -->
+    <!--       <wa-breadcrumb-item href="/projects/2025/03/13/introducing-chessfield-live.md.html">Chessfield Live: A New Way to Watch Online Chess</wa-breadcrumb-item>-->
+    <!--       -->
+  </wa-breadcrumb>
+</div>
+
+      <div>
+        <form id="formsearch" action="/recherche/" class="relative">
+  <label for="search" class="sr-only">Search</label>
+  <div class="flex">
+    <input
+      name="s"
+      type="text"
+      id="search"
+      autocomplete="off"
+      class="border p-2 w-full bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none"
+      placeholder="Search..."
+    />
+    <button
+      type="submit"
+      id="search-button"
+      class="p-2 w-12 border bg-amber-400 hover:bg-amber-200 cursor-pointer flex items-center justify-center"
+    >
+      <i class="fa-solid fa-search text-gray-100" id="search-icon"></i>
+      <i
+        class="fa-solid fa-spinner fa-spin text-gray-100"
+        id="spinner-icon"
+        style="display: none"
+      ></i>
+    </button>
   </div>
-</div>
+  <div
+    id="instantResults"
+    class="absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto hidden"
+  ></div>
+</form>
 
-<!-- Meilisearch JS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
-<script>
-  const meilisearchConfig = {
-    host: "https://meilisearch.wrkng.io",
-    apiKey: "62239a75a262685f951eb38d0bb287a143593bcb1cbc253444c4067510e8402e"
-  };
-  const client = new MeiliSearch(meilisearchConfig);
-  const index = client.index('unicolored_prod');
+      </div>
+   </div>
+ </div>
+</header>
+<!--<header class="slot-content" slot="banner">-->
+<!---->
+<!--      <div class="p-4">-->
+<!--        <nav class="wa-cluster">-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--        </nav>-->
+<!--      </div>-->
+<!---->
+<!--</header>-->
 
-  document.getElementById('formsearch').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const input = document.getElementById('search');
-    const query = input.value;
+<!--<div class="slot-content" slot="subheader">-->
+<!--</div>-->
+<!--    <header class="slot-content" slot="main-header">-->
 
-    if (query.length < 2) {
-      document.getElementById('results').innerHTML = '';
-      return;
-    }
-
-    try {
-      const results = await index.search(query);
-
-      if (typeof umami !== 'undefined') {
-        umami.track('Recherche', { query: query, resultsCount: results.hits.length });
-      }
-
-      document.getElementById('results').innerHTML = results.hits
-        .map(hit => `<wa-card><a href="${hit.url}" >${hit.title}</a></wa-card>`)
-        .join('');
-    } catch (error) {
-      console.error('Search error:', error);
-      document.getElementById('results').innerHTML = '<p class="text-red-500 p-4">Search failed. Please try again.</p>';
-    }
-  });
-</script>
-
-
-</div>
-<header class="slot-content" slot="main-header">
-        <!-- Breadcrumb -->
-        <div class="m-auto px-12 py-4">
-                <!-- ... -->
-            <wa-breadcrumb>
-                <wa-breadcrumb-item href="https://unicolo.red/">Home</wa-breadcrumb-item>
-
-                
-                <wa-breadcrumb-item href="/projects/2025/03/13/introducing-chessfield-live.md.html">Chessfield Live: A New Way to Watch Online Chess</wa-breadcrumb-item>
-                
-            </wa-breadcrumb>
-        </div>
-    </header>
+<!--    </header>-->
     <div class="slot-content" slot="">
-        <div class="wrapper">
-            <article class="prose lg:prose-lg m-auto" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="@container mx-auto">
+            <article class="prose lg:prose-lg mt-12 m-auto" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Chessfield Live: A New Way to Watch Online Chess</h1>
@@ -185,6 +194,8 @@ or contribute to the project.</p>
     <footer class="slot-content" slot="main-footer">
     </footer>
     <div class="slot-content" slot="aside">
+    </div>
+    <div class="slot-content" slot="navigation-toggle">
     </div><footer class="slot-content" slot="footer">
 
   <wa-stack class="w-full mt-12 mb-24">
@@ -207,20 +218,218 @@ or contribute to the project.</p>
     <!--  </div>-->
 
     <div class="prose m-auto">
-      <p>Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey red with code, ideas, and life.</p>
+      <p></p>
     </div>
+    <div class="flex justify-center">
+      <div>
+        <a href="https://github.com/unicolored"><i class="fa-brands fa-github-alt text-4xl"></i></a>
+      </div>
+    </div>
+
   </wa-stack>
 
 </footer>
-</wa-page>
-
-
-
 
 <initial-sh sounds></initial-sh>
 
-<script type="module" src="https://cdn.jsdelivr.net/npm/initial-sh@0.5.3/initial-sh.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/initial-sh/initial-sh.js"></script>
+ <!-- Meilisearch JS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
+<script>
+  const meilisearchConfig = {
+    host: "https://meilisearch.wrkng.io",
+    apiKey:
+      "62239a75a262685f951eb38d0bb287a143593bcb1cbc253444c4067510e8402e",
+  };
+  // Initialize MeiliSearch client and index
+  const client = new MeiliSearch(meilisearchConfig);
+  const index = client.index('unicolored_prod');
 
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId); // Clear any existing timeout
+      timeoutId = setTimeout(() => func.apply(this, args), delay); // Set new timeout
+    };
+  }
+
+  function throttle(func, limit) {
+    let inThrottle;
+    return function (...args) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
+      }
+    };
+  }
+
+  const searchInput = document.getElementById('search');
+  const instantResults = document.getElementById('instantResults');
+  const searchIcon = document.getElementById('search-icon');
+  const spinnerIcon = document.getElementById('spinner-icon');
+  const searchForm = document.getElementById('formsearch');
+  const searchButton = document.getElementById('search-button');
+  const searchCache = {};
+
+  const renderInstantResults = (hits) => {
+    return hits
+      .map(
+        (hit) =>
+          `<p class="result-item p-2 hover:bg-gray-100 cursor-pointer"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit._formatted.title || hit.title}</a></p>`,
+      )
+      .join('');
+  };
+
+  const performSearch = throttle(async (query) => {
+    if (searchCache[query]) {
+      instantResults.innerHTML = searchCache[query];
+      instantResults.classList.remove('hidden');
+      return;
+    }
+
+    searchIcon.style.display = 'none';
+    spinnerIcon.style.display = 'block';
+    instantResults.classList.remove('hidden');
+
+    try {
+      const results = await index.search(query, {
+        limit: 5,
+        attributesToHighlight: ['title'], // Highlight the 'title' field
+        highlightPreTag: '<mark>',
+        highlightPostTag: '</mark>',
+      });
+      const html = renderInstantResults(results.hits);
+      searchCache[query] = html;
+      instantResults.innerHTML = html;
+      instantResults.classList.remove('hidden');
+    } catch (error) {
+      console.error('Search error:', error);
+      instantResults.innerHTML =
+        '<p class="text-red-500 p-2">Search failed. Please try again.</p>';
+      instantResults.classList.remove('hidden');
+    } finally {
+      spinnerIcon.style.display = 'none';
+      searchIcon.style.display = 'block';
+    }
+  }, 1500);
+
+  // Highlight and navigate results with arrow keys
+  let selectedIndex = -1;
+
+  const updateHighlight = () => {
+    const items = instantResults.querySelectorAll('.result-item');
+    items.forEach((item, index) => {
+      item.classList.toggle('bg-gray-200', index === selectedIndex);
+      item.classList.toggle('hover:bg-gray-100', index !== selectedIndex);
+    });
+  };
+
+  let selectedLink = null;
+
+  const navigateResults = (e) => {
+    const items = instantResults.querySelectorAll('.result-item');
+    console.log('⭐️ items.length', items.length);
+    console.log(
+      "⭐️ instantResults.classList.contains('hidden')",
+      instantResults.classList.contains('hidden'),
+    );
+    // if (!items.length || instantResults.classList.contains('hidden')) return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      selectedLink = items[selectedIndex]?.querySelector('a');
+      console.log(selectedLink);
+      updateHighlight();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, -1);
+      selectedLink = items[selectedIndex]?.querySelector('a');
+      console.log(selectedLink);
+      updateHighlight();
+    } else if (e.key === 'Enter') {
+      e.preventDefault(); // Prevent form submission
+      e.stopPropagation();
+      console.log('🟢', selectedLink);
+      // console.log(selectedIndex)
+      // if (selectedIndex >= 0) {
+      //   const selectedLink = items[selectedIndex].querySelector('a');
+      //   console.log(selectedLink)
+      if (selectedLink) {
+        window.location.href = selectedLink; // Navigate to selected link
+        resetResults();
+        // }
+      } else {
+        searchForm.submit(); // Fallback to form submission if no result selected
+      }
+    }
+  };
+
+  const resetResults = () => {
+    instantResults.innerHTML = '';
+    instantResults.classList.add('hidden');
+    spinnerIcon.style.display = 'none';
+    searchIcon.style.display = 'block';
+    selectedIndex = -1;
+  };
+
+  // Event listeners
+  searchInput.addEventListener('keydown', (e) => {
+    const query = e.target.value.trim();
+
+    console.log(query);
+
+    if (query.length < 2) {
+      resetResults();
+      return;
+    }
+
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
+      console.log('Hit!', e.key);
+      navigateResults(e);
+    } else {
+      performSearch(query);
+      selectedIndex = -1; // Reset selection on new search
+    }
+  });
+
+  // Prevent default form submission on Enter key
+  searchForm.addEventListener('submit', (e) => {
+    // Prevent submission unless triggered by button click or explicit form.submit()
+    // console.log('🟣',e.submitter)
+    // if (e.submitter !== searchButton) {
+    e.preventDefault();
+    // }
+  });
+
+  // Handle button click explicitly (optional, for clarity)
+  searchButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent double submission handling
+    e.stopPropagation();
+    const query = searchInput.value.trim();
+    if (query.length >= 2) {
+      searchForm.submit(); // Trigger form submission
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    console.log('document click');
+    if (!searchInput.contains(e.target) && !instantResults.contains(e.target)) {
+      resetResults();
+    }
+  });
+
+  instantResults.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link) {
+      window.location.href = link.href;
+      resetResults();
+    }
+  });
+</script>
+ '
+</wa-page>
 
 </body>
 
