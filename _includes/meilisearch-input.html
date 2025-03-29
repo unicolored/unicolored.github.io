@@ -1,54 +1,29 @@
-
-<!-- Search Input -->
-
-<div class="wa-grid w-full px-12">
-  <div class="wa-stack " >
-    <form id="formsearch">
-      <div class="wa-flank:end wa-gap-xs">
-        <wa-input type="text" id="search" placeholder="Rechercher...">
-          <wa-icon slot="prefix" name="magnifying-glass"></wa-icon>
-        </wa-input>
-        <wa-button type="submit" id="search-button">Recherche</wa-button>
-      </div>
-    </form>
-    <wa-stack id="results" class="wa-gap-m"></wa-stack>
+<form id="formsearch" action="/recherche/" class="relative">
+  <label for="search" class="sr-only">Search</label>
+  <div class="flex">
+    <input
+      name="s"
+      type="text"
+      id="search"
+      autocomplete="off"
+      class="border p-2 w-full bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none"
+      placeholder="Search..."
+    />
+    <button
+      type="submit"
+      id="search-button"
+      class="p-2 w-12 border bg-amber-400 hover:bg-amber-200 cursor-pointer flex items-center justify-center"
+    >
+      <i class="fa-solid fa-search text-gray-100" id="search-icon"></i>
+      <i
+        class="fa-solid fa-spinner fa-spin text-gray-100"
+        id="spinner-icon"
+        style="display: none"
+      ></i>
+    </button>
   </div>
-</div>
-
-<!-- Meilisearch JS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/meilisearch@0.40.0/dist/bundles/meilisearch.umd.js"></script>
-<script>
-  const meilisearchConfig = {
-    host: "{{ site.meilisearch.url | default: site.meilisearch.url | default: 'http://localhost:7700' }}",
-    apiKey: "{{ site.meilisearch.search_api_key | default: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f' }}"
-  };
-  const client = new MeiliSearch(meilisearchConfig);
-  const index = client.index('{{site.meilisearch.index_name}}');
-
-  document.getElementById('formsearch').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const input = document.getElementById('search');
-    const query = input.value;
-
-    if (query.length < 2) {
-      document.getElementById('results').innerHTML = '';
-      return;
-    }
-
-    try {
-      const results = await index.search(query);
-
-      if (typeof umami !== 'undefined') {
-        umami.track('Recherche', { query: query, resultsCount: results.hits.length });
-      }
-
-      document.getElementById('results').innerHTML = results.hits
-        .map(hit => `<wa-card><a href="${hit.url}" >${hit.title}</a></wa-card>`)
-        .join('');
-    } catch (error) {
-      console.error('Search error:', error);
-      document.getElementById('results').innerHTML = '<p class="text-red-500 p-4">Search failed. Please try again.</p>';
-    }
-  });
-</script>
-
+  <div
+    id="instantResults"
+    class="absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto hidden"
+  ></div>
+</form>

@@ -25,6 +25,16 @@
     <div class="prose m-auto">
       <p>{{- site.description | escape -}}</p>
     </div>
+    <div class="flex justify-center">
+      <div>
+        <a href="https://github.com/unicolored"><i class="fa-brands fa-github-alt text-4xl"></i></a>
+      </div>
+    </div>
+
   </wa-stack>
 
 </footer>
+
+{% include initial-sh.html %} {% include meilisearch-script.html %} {% if
+page.title == 'Recherche' %} {% include meilisearch-script-second.html %} {%
+endif %}'

@@ -12,6 +12,8 @@
   --color-blue-500: #3b82f7;
   --font-family-sans: 'Inter', sans-serif;
   --color-white: #fff;
+
+  --color-primary: var(--color-red-500);
 }
 
 html,
@@ -20,10 +22,15 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  @apply bg-primary;
 }
 
 @layer utilities {
   .breadcrumb {
     @apply py-4 px-6 bg-gray-100 rounded-lg;
   }
+}
+
+article h1 {
+  @apply text-3xl;
 }
