@@ -15,59 +15,33 @@ jobs:
     env:
       JEKYLL_ENV: production
       NODE_ENV: development
+      FONTAWESOME_PACKAGE_TOKEN: ${{ secrets.FONTAWESOME_PACKAGE_TOKEN }}
       MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
       MEILISEARCH_SEARCH_API_KEY: ${{ secrets.MEILISEARCH_SEARCH_API_KEY }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
-          node-version: '22'
-
-      - name: Install Dependencies
-        run: npm install --force
-
-      - name: Verify PostCSS installation
-        run: |
-          npm list postcss postcss-cli || echo "❌ PostCSS or CLI not installed!"
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+          node-version: '23'
+      - run: |
+          corepack enable
+          corepack prepare yarn@stable --activate
+      - run: yarn install
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Build Jekyll
-        run: |
+      - run: |
           echo "meilisearch:" > _config.secrets.yml
           echo "  api_key: $MEILISEARCH_API_KEY" >> _config.secrets.yml
           echo "  search_api_key: $MEILISEARCH_SEARCH_API_KEY" >> _config.secrets.yml
-          npm run build:site:prod
 
-      - name: Build CSS
-        run: |
-          mkdir -p _site/assets/css
-          ls -la assets/css/style.css || echo "❌ Input CSS file not found!"
-          npm run build:css || true
-          ls -la _site/assets/css/style.css || echo "❌ Output CSS file not found!"
+      - run: sh script/cibuild.sh
 
-      - name: Check _site directory
-        run: |
-          if [ ! -d "_site" ]; then
-            echo "Error: _site directory not found!"
-            exit 1
-          fi
-
-      #      - name: Test links with HTMLProofer
-      #        run:
-      #          bundle exec htmlproofer ./_site --check-external-hash --ignore-urls
-      #          "/localhost/"
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
           branch: gh-pages
