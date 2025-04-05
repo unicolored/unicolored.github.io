@@ -1,5 +1,8 @@
 title: The Red Journey
-baseurl: '/' # the subpath of your site, e.g. /blog
+baseurl: ''
+host: 'localhost'
+port: 4125
+safe: true
 url: 'https://unicolo.red' # the base hostname & protocol for your site, e.g. http://example.com
 domain: unicolo.red
 #description: >- # this means to ignore newlines
@@ -14,7 +17,6 @@ collections_dir: contents
 collections:
   projects:
     output: true
-safe: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
