@@ -47,7 +47,7 @@ jekyll_compose:
       sitemap: false
 
 meilisearch:
-  disable_in_development: false
+  disable_in_development: true
   url: 'http://localhost:7700'
   api_key: '7b87f0a5fc0e08bec43f2d4ea996534caa52a898a85eaca287d064284d69dcec'
   search_api_key: 'c880ba40824b129bff98617169edcedcd7beecc3facb092d7501430147d65127'
