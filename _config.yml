@@ -10,8 +10,9 @@ domain: unicolo.red
 #  red with code, ideas, and life.
 twitter_username: gilleshoarau
 github_username: unicolored
-header_pages:
-  - about
+nav_pages:
+  - projects.html
+  - about.html
 rss: rss
 collections_dir: contents
 collections:
@@ -48,8 +49,8 @@ jekyll_compose:
 meilisearch:
   disable_in_development: false
   url: 'http://localhost:7700'
-  api_key: 'b3f0f337267b9fda8d9e39a1975ccc96c8003bd25ad6ddaa058cf67dd19c0fc6'
-  search_api_key: '8a7690949055fe1bc7af81b8ef6972ad02ff372b158118ef9316f7e41f89159f'
+  api_key: '7b87f0a5fc0e08bec43f2d4ea996534caa52a898a85eaca287d064284d69dcec'
+  search_api_key: 'c880ba40824b129bff98617169edcedcd7beecc3facb092d7501430147d65127'
   index_name: 'unicolored_dev'
   collections:
     posts:

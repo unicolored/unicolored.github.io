@@ -3,9 +3,9 @@
   "version": "1.2.0",
   "description": "Welcome to **The Red Journey**, my creative space at [unicolo.red](https://unicolo.red). This Jekyll-powered blog, hosted on GitHub Pages, is where I share projects, ideas, and experiments—tinted with a red-hued twist.",
   "scripts": {
-    "build:css": "npx postcss assets/css/main.css -o _site/assets/css/style.css --verbose",
-    "watch:css": "npx postcss assets/css/main.css -o _site/assets/css/style.css --watch",
-    "start": "yarn build:site:local && yarn build:css && concurrently \"yarn watch:css\" \"bundle exec jekyll serve --watch\"",
+    "build:css": "npx postcss styles/main.css -o public/styles.css --verbose",
+    "watch:css": "npx postcss styles/main.css -o public/styles.css --watch",
+    "start": "yarn build:css && concurrently \"yarn watch:css\" \"bundle exec jekyll serve --livereload --watch --incremental --host localhost\"",
     "format": "npx prettier --write \"**/*.{js,css,md,markdown,yml,yaml}\"",
     "check": "npx prettier --check \"**/*.{js,css,md,markdown,yml,yaml}\"",
     "proof": "bundle exec htmlproofer ./_site --check-external-hash --ignore-urls \"/localhost/,/buymeacoffee/\"",
