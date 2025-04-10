@@ -1,0 +1,10 @@
+---
+layout: post
+title: CronTech
+date: 2003-12-01 16:00:00 +0100
+category: draft
+---
+
+assets/images/projects/2003/12/crontech.jpg
+
+assets/images/projects/2003/12/CronTech-the-first-episode.jpg
