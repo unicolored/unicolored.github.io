@@ -1,0 +1,11 @@
+._article_card_wrapper {
+  @apply flex flex-row gap-5 flex-wrap justify-evenly;
+}
+
+article._article_card {
+  @apply flex p-5 border-2 w-sm flex-col gap-5;
+
+  h1 {
+    @apply text-2xl;
+  }
+}

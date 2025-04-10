@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+@import './lib/article.css';
+@import './lib/meilisearch.css';
+
+@plugin '@tailwindcss/typography';
+
+@tailwind utilities;
+
+@theme {
+  --color-blue-500: #3b82f7;
+  --font-family-sans: 'Inter', sans-serif;
+  --color-white: #fff;
+
+  --color-primary: var(--color-red-500);
+}
+
+._page_header {
+  @apply text-center p-5 w-full min-h-[80px] flex flex-col justify-center gap-8;
+
+  ._page_header_logo {
+    @apply flex justify-center;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  ._page_header_nav {
+    a.nav-item {
+      @apply p-4 text-lg uppercase no-underline;
+    }
+  }
+}
