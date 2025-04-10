@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
 {%- include head.html -%}
 
 <body>
 
-<wa-page view="desktop" navigation-placement="start" style="--header-height: 57.59375px; --subheader-height: 57.59375px; --banner-height: 57.59375px; --footer-height: 57.59375px;">
-    {%- include header.html -%}
+{%- include header.html -%}
 
-<!--    <header class="slot-content" slot="main-header">-->
+<div class="@container mx-auto">
+  {{ content }}
+</div>
 
-<!--    </header>-->
-    <div class="slot-content" slot="">
-        <div class="@container mx-auto">
-            {{ content }}
-        </div>
-    </div>
-    <footer class="slot-content" slot="main-footer">
-    </footer>
-    <div class="slot-content" slot="aside">
-    </div>
-    <div class="slot-content" slot="navigation-toggle">
-    </div>
-
-        {%- include footer.html -%}
-</wa-page>
+{%- include footer.html -%}
 
 </body>
 

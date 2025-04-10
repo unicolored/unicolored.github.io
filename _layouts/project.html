@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article class="mt-12 m-auto max-w-4xl" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="project-header mb-4">
+    <h1 class="project-title text-5xl" itemprop="name headline">{{ page.title | escape }}</h1>
+
+    <div class="flex justify-between items-center mb-4">
+      {% if page.description %}
+      <div>
+        <blockquote class="m-0">
+          <p class="m-0">{{ page.description }}</p>
+        </blockquote>
+      </div>
+      {% else %}
+      <div>
+        &nbsp;
+      </div>
+      {% endif %}
+
+      {% if page.link %}
+      <div>
+        <a class="p-4 inline-block border-2 text-lg" href="{{ page.link }}">
+          <i class="fa-sharp-duotone fa-solid fa-link" id="search-icon"></i> {{ page.link }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+
+
+    {% if page.thumbnail %}
+    <img class="p-4 border-2 w-full h-auto" src="{{ page.thumbnail }}" alt="{{ page.title }}">
+    {% endif %}
+
+    <p class="project-meta">
+      {%- if page.author -%}
+      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+                                                                                    itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}</p>
+  </header>
+
+  <div class="prose lg:prose-lg" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+
+
+
+
+  <footer class="min-h-10 mb-24">
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </footer>
+
+</article>
+
+{%- if site.disqus.shortname -%}
+{%- include disqus_comments.html -%}
+{%- endif -%}

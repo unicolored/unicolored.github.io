@@ -1,49 +1,32 @@
+<header class="_page_header">
+  <div class="_page_header_logo">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    <a class="flex content-center gap-4" rel="author" href="{{ "/" | relative_url }}">
+    <span class="flex content-center self-center justify-center text-center w-[120px] h-[120px] text-7xl">
+          <span class="inline-block self-center h-[72px]"><i class="fa-kit fa-unicolored"></i></span>
+        </span>
+    <span class="font-serif text-6xl self-center">
+          {{ site.title | escape }}
+        </span>
+    </a>
+  </div>
 
 
+  <nav class="_page_header_nav">
 
-<header class="slot-content" slot="header">
-<!--    <div class="wrapper text-center p-5 w-full">-->
-<!--      {%- assign default_paths = site.pages | map: "path" -%}-->
-<!--      {%- assign page_paths = site.header_pages | default: default_paths -%}-->
-<!--      <a class="site-title wa-heading-3xl" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>-->
-<!--    </div>-->
+    <div class="nav-items">
+      {% for nav_page in site.nav_pages %}
+      {% assign hyperpage = site.pages | where: "path", nav_page | first %}
+      {% if hyperpage.title %}
+      <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
 
-   <!-- Breadcrumb -->
-    <div class="flex justify-around p-4 w-full">
+  </nav>
 
-     <!-- ... -->
-<div class="grow">
-  <wa-breadcrumb>
-    <wa-breadcrumb-item href="{{ '/' | relative_url }}">
-        <span class="wa-heading-xl text-red-800 hover:text-red-700">
-        <i class="fa-kit fa-unicolored fa-xl"></i> {{ site.title }}
-          </span>
-    </wa-breadcrumb-item>
-
-           <wa-breadcrumb-item href="{{ '/about' | relative_url }}">About</wa-breadcrumb-item>
-  </wa-breadcrumb>
-</div>
-
-      <div>
-        {% include meilisearch-input.html %}
-      </div>
-   </div>
- </div>
+  <div class="_page_header_search">
+    {% include meilisearch-input.html %}
+  </div>
 </header>
-<!--<header class="slot-content" slot="banner">-->
-<!--  {%- if page_paths -%}-->
-<!--      <div class="p-4">-->
-<!--        <nav class="wa-cluster">-->
-<!--          {%- for path in page_paths -%}-->
-<!--          {%- assign my_page = site.pages | where: "path", path | first -%}-->
-<!--          {%- if my_page.title -%}-->
-<!--          <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>-->
-<!--          {%- endif -%}-->
-<!--          {%- endfor -%}-->
-<!--        </nav>-->
-<!--      </div>-->
-<!--  {%- endif -%}-->
-<!--</header>-->
-
-<!--<div class="slot-content" slot="subheader">-->
-<!--</div>-->

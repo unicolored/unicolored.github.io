@@ -1,25 +1,24 @@
-<form id="formsearch" action="/recherche/" class="relative">
+<form id="formsearch" action="/search/" class="relative">
   <label for="search" class="sr-only">Search</label>
-  <div class="flex">
+  <div class="input-button-group">
     <input
       name="s"
       type="text"
       id="search"
       autocomplete="off"
-      class="border p-2 w-full bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none"
       placeholder="Search..."
     />
     <button
+      appearance="plain"
       type="submit"
       id="search-button"
-      class="p-2 w-12 border cursor-pointer flex items-center justify-center"
     >
-      <i class="fa-sharp-duotone fa-solid fa-magnifying-glass text-gray-100" id="search-icon"></i>
-      <i class="fa-sharp-duotone fa-solid fa-strawberry fa-flip text-gray-100" id="spinner-icon" style="display: none"></i>
+      <i class="fa-sharp-duotone fa-solid fa-magnifying-glass" id="search-icon"></i>
+      <i class="fa-sharp-duotone fa-solid fa-strawberry fa-flip" id="spinner-icon" style="display: none"></i>
     </button>
   </div>
   <div
     id="instantResults"
-    class="absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto hidden"
+    class="hidden"
   ></div>
 </form>

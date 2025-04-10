@@ -41,7 +41,7 @@
     return hits
       .map(
         (hit) =>
-          `<p class="result-item p-2 hover:bg-gray-100 cursor-pointer"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit._formatted.title || hit.title}</a></p>`,
+          `<p class="result-item"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit.title}</a></p>`,
       )
       .join('');
   };
@@ -60,9 +60,9 @@
     try {
       const results = await index.search(query, {
         limit: 5,
-        attributesToHighlight: ['title'], // Highlight the 'title' field
-        highlightPreTag: '<mark>',
-        highlightPostTag: '</mark>',
+        // attributesToHighlight: [], // Highlight the 'title' field
+        // highlightPreTag: '<mark>',
+        // highlightPostTag: '</mark>',
       });
       const html = renderInstantResults(results.hits);
       searchCache[query] = html;
@@ -94,37 +94,23 @@
 
   const navigateResults = (e) => {
     const items = instantResults.querySelectorAll('.result-item');
-    console.log('⭐️ items.length', items.length);
-    console.log(
-      "⭐️ instantResults.classList.contains('hidden')",
-      instantResults.classList.contains('hidden'),
-    );
-    // if (!items.length || instantResults.classList.contains('hidden')) return;
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
       selectedLink = items[selectedIndex]?.querySelector('a');
-      console.log(selectedLink);
       updateHighlight();
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       selectedIndex = Math.max(selectedIndex - 1, -1);
       selectedLink = items[selectedIndex]?.querySelector('a');
-      console.log(selectedLink);
       updateHighlight();
     } else if (e.key === 'Enter') {
       e.preventDefault(); // Prevent form submission
       e.stopPropagation();
-      console.log('🟢', selectedLink);
-      // console.log(selectedIndex)
-      // if (selectedIndex >= 0) {
-      //   const selectedLink = items[selectedIndex].querySelector('a');
-      //   console.log(selectedLink)
       if (selectedLink) {
         window.location.href = selectedLink; // Navigate to selected link
         resetResults();
-        // }
       } else {
         searchForm.submit(); // Fallback to form submission if no result selected
       }
@@ -143,15 +129,12 @@
   searchInput.addEventListener('keydown', (e) => {
     const query = e.target.value.trim();
 
-    console.log(query);
-
     if (query.length < 2) {
       resetResults();
       return;
     }
 
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
-      console.log('Hit!', e.key);
       navigateResults(e);
     } else {
       performSearch(query);
@@ -162,10 +145,7 @@
   // Prevent default form submission on Enter key
   searchForm.addEventListener('submit', (e) => {
     // Prevent submission unless triggered by button click or explicit form.submit()
-    // console.log('🟣',e.submitter)
-    // if (e.submitter !== searchButton) {
     e.preventDefault();
-    // }
   });
 
   // Handle button click explicitly (optional, for clarity)
@@ -179,7 +159,6 @@
   });
 
   document.addEventListener('click', (e) => {
-    console.log('document click');
     if (!searchInput.contains(e.target) && !instantResults.contains(e.target)) {
       resetResults();
     }
