@@ -2,7 +2,7 @@
 layout: post
 title: 'Chesspop Live: A Fresh Name!'
 date: 2025-03-17
-categories: [project]
+category: [project]
 tags: [chess, 3d, chesspop, chessfield]
 description:
   'Say hello to Chesspop Live—a snappier name, sound effects, and the same 3D

@@ -2,7 +2,7 @@
 layout: post
 title: 'Initial-sh v0.3.0 Hits NPM!'
 date: 2025-03-15 10:00:00 -0500
-categories: release
+category: release
 ---
 
 Big news! `initial-term` v0.3.0 is now live on NPM 🎉. Grab this Quake-stylish

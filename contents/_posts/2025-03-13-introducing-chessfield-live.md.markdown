@@ -2,7 +2,7 @@
 layout: post
 title: 'Chessfield Live: A New Way to Watch Online Chess'
 date: 2025-03-13
-categories: projects
+category: projects
 ---
 
 Hello, chess fans! 🚀 We're excited to share **Chessfield Live**, a simple and
