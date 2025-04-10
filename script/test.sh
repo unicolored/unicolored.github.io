@@ -2,8 +2,8 @@
 
 set -e
 
-yarn build:site:prod
 yarn build:css
+yarn build:site:prod
 #yarn proof
 
 yarn check
