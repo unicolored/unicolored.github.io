@@ -8,3 +8,4 @@ Gemfile.lock
 node_modules
 *.local.yml
 *.secrets.yml
+public/styles.css

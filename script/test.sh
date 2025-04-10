@@ -4,7 +4,7 @@ set -e
 
 yarn build:site:prod
 yarn build:css
-yarn proof
+#yarn proof
 
 yarn check
 

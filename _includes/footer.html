@@ -1,9 +1,8 @@
 <footer class="slot-content" slot="footer">
 
-  <wa-stack class="w-full mt-12 mb-24">
 
     <hr class="border-1 border-red-200">
-    <h2 class="text-center w-full" style="color:var(--wa-color-brand)">{{ site.title | escape }}</h2>
+    <h2 class="text-center w-full" style="color:var(--wa-color-brand)"><i class="fa-kit fa-unicolored"></i> {{ site.title | escape }}</h2>
 
     <!--  <ul class="contact-list">-->
     <!--    <li class="p-name">-->
@@ -25,15 +24,18 @@
     <div class="prose m-auto">
       <p>{{- site.description | escape -}}</p>
     </div>
-    <div class="flex justify-between w-[100px] mx-auto">
-        <a href="https://github.com/unicolored"><i class="fa-brands fa-github text-4xl"></i></a>
+    <div class="flex justify-between gap-4 max-w-[300px] mx-auto">
+        <a href="https://github.com/unicolored"><i class="fa-brands fa-fw fa-github text-4xl"></i></a>
         &nbsp;
         <a href="https://buymeacoffee.com/unicolored">
-          <i class="fa-sharp-duotone fa-solid fa-mug-hot text-4xl"></i>
+          <i class="fa-sharp-duotone fa-solid fa-mug-hot fa-fw text-4xl"></i>
+        </a>
+        &nbsp;
+        <a href="https://gilles.dev">
+            <i class="fa-kit fa-gilles fa-fw text-4xl"></i>
         </a>
     </div>
 
-  </wa-stack>
 
 </footer>
 

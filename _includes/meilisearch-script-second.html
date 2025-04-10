@@ -16,7 +16,7 @@
     return hits
       .map(
         (hit) =>
-          `<p><a href="${hit.url}" class="text-blue-500 hover:underline">${hit.title}</a></p>`,
+          `<p><a href="${hit.url}" class="text-blue-500 hover:underline">${hit.title}</a></p>`
       )
       .join('');
   };
@@ -29,16 +29,18 @@
     try {
       const results = await index.search(query);
 
-      // Track search event if umami is available
-      if (typeof umami !== 'undefined') {
-        umami.track('Recherche', {
-          query: query,
-          resultsCount: results.hits.length,
-        });
-      }
+      if (results) {
+        // Track search event if umami is available
+        if (typeof umami !== 'undefined') {
+          umami.track('Recherche', {
+            query: query,
+            resultsCount: results.hits.length
+          });
+        }
 
-      // Render results
-      resultsDiv.innerHTML = renderResults(results.hits);
+        // Render results
+        resultsDiv.innerHTML = renderResults(results.hits);
+      }
     } catch (error) {
       console.error('Search error:', error);
       resultsDiv.innerHTML =

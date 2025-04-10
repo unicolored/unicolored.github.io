@@ -1,25 +1,25 @@
-<form id="formsearch" action="/recherche/" class="relative">
-  <label for="search" class="sr-only">Search</label>
-  <div class="flex">
-    <input
+<form id="formsearch" action="/search/" class="relative">
+  <div class="input-button-group">
+    <wa-input
       name="s"
       type="text"
       id="search"
       autocomplete="off"
-      class="border p-2 w-full bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none"
       placeholder="Search..."
-    />
-    <button
+      clearable
+      size="large"
+      style="width: 100%"
+    ></wa-input>
+    <wa-button style="width: 3em;"
       type="submit"
+               size="large"
       id="search-button"
-      class="p-2 w-12 border cursor-pointer flex items-center justify-center"
     >
-      <i class="fa-sharp-duotone fa-solid fa-magnifying-glass text-gray-100" id="search-icon"></i>
-      <i class="fa-sharp-duotone fa-solid fa-strawberry fa-flip text-gray-100" id="spinner-icon" style="display: none"></i>
-    </button>
+      <wa-icon slot="prefix" name="magnifying-glass" variant="solid" id="search-icon"></wa-icon>
+    </wa-button>
   </div>
   <div
     id="instantResults"
-    class="absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto hidden"
+    class="hidden"
   ></div>
 </form>

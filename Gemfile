@@ -9,7 +9,7 @@ group :jekyll_plugins do
   gem 'jekyll-watch', '~> 2.2', '>= 2.2.1'
   gem 'jekyll-paginate', '~> 1.1'
   gem 'jekyll-admin', '~> 0.12.0'
-  gem "jekyll-meilisearch", "~> 0.4.4"
+  gem "jekyll-meilisearch", "~> 0.4.7"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

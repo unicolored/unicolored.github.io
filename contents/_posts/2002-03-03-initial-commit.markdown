@@ -2,7 +2,7 @@
 layout: post
 title: 'Initial commit'
 date: 2002-03-03 16:00:00 +0100
-categories: journey
+category: journey
 ---
 
 Gilles here! 🎉 I'm about to embark on a coding adventure, and you're invited

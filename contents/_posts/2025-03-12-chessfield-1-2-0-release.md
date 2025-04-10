@@ -2,7 +2,7 @@
 layout: post
 title: 'Chessfield is public!'
 date: 2025-03-12
-categories: project chessfield
+category: project chessfield
 ---
 
 I’m thrilled to announce that **Chessfield 1.2.0** is out as of March 12, 2025!

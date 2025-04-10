@@ -1,0 +1,59 @@
+---
+title: Projects
+layout: fullwidth
+permalink: /projects/
+---
+
+<main class="mt-12 p-6">
+
+  <div class="_article_card_wrapper">
+    {% assign projects = site.projects | where: "category", "unicolored" | where: "published", "true" %}
+<!--    {{ projects | size }}-->
+  {% for project in projects %}
+
+<!--  <article class="_article_card">-->
+<!--    <h1><a href="{{ project.url }}">{{ project.title }}</a></h1>-->
+<!--    {% if project.description %}-->
+<!--      <p>{{ project.description }}</p>-->
+<!--    {% endif %}-->
+<!--  </article>-->
+
+    <wa-card with-header with-footer class="card-header">
+      <div slot="header" class="wa-split">
+        <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+      </div>
+
+      {% if project.description %}
+      <p>{{ project.description }}</p>
+      {% else %}
+      <p>&nbsp;</p>
+      {% endif %}
+
+      <div slot="footer">
+        <!--<wa-rating  readonly value="5"precision="0.5"></wa-rating>-->
+        {% if project.link %}
+        <small class="block w-full">
+          <a href="{{ project.link }}" target="_blank">
+            <wa-icon-button family="sharp-duotone" size="large" name="link"></wa-icon-button> {{ project.link }}
+          </a>
+        </small>
+          <!--<wa-icon-button name="arrow-up-right-from-square"></wa-icon-button>-->
+
+
+        {% endif %}
+        {% if project.github %}
+        <wa-icon-button style="font-size: 2rem;" href="{{ project.github }}" target="_blank" name="github" family="brands"></wa-icon-button>
+        {% endif %}
+        {% if project.npm %}
+        <wa-icon-button style="font-size: 2rem;" href="{{ project.npm }}" target="_blank" name="npm" family="brands"></wa-icon-button>
+        {% endif %}
+        {% if project.gem %}
+        <wa-icon-button style="font-size: 2rem;"  name="gem" variant="solid" family="sharp-duotone"></wa-icon-button>
+        {% endif %}
+      </div>
+    </wa-card>
+
+  {% endfor %}
+  </div>
+
+</main>
