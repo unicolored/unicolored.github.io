@@ -2,10 +2,18 @@
   @apply flex flex-row gap-5 flex-wrap justify-evenly;
 }
 
-article._article_card {
-  @apply flex p-5 border-2 w-sm flex-col gap-5;
+/*article._article_card {*/
+/*  @apply flex p-5 border-2 w-sm flex-col gap-5;*/
 
-  h1 {
-    @apply text-2xl;
-  }
+/*  h1 {*/
+/*    @apply text-2xl;*/
+/*  }*/
+/*}*/
+
+.card-header {
+  @apply w-full max-w-[333px];
+}
+
+.card-header h3 {
+  margin: 0;
 }

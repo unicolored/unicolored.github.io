@@ -17,16 +17,14 @@
     @apply flex;
   }
 
-  input#search {
+  wa-input#search {
     --wa-form-control-border-radius: 16px 0 0 4px;
-    @apply bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none h-full;
   }
 
-  button#search-button {
+  wa-button#search-button {
     border-end-start-radius: 0;
     border-start-start-radius: 0;
     border-start-end-radius: 4px;
     border-end-end-radius: 16px;
-    @apply flex p-4 items-center justify-center h-full bg-none;
   }
 }
