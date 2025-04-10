@@ -3,12 +3,12 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     <a class="flex content-center gap-4" rel="author" href="{{ "/" | relative_url }}">
-    <span class="flex content-center self-center justify-center text-center w-[120px] h-[120px] text-7xl">
-          <span class="inline-block self-center h-[72px]"><i class="fa-kit fa-unicolored"></i></span>
-        </span>
-    <span class="font-serif text-6xl self-center">
-          {{ site.title | escape }}
-        </span>
+      <span class="flex content-center self-center justify-center text-center w-[120px] h-[120px] text-7xl">
+        <span class="inline-block self-center h-[72px]"><i class="fa-kit fa-unicolored"></i></span>
+      </span>
+      <span class="text-6xl self-center">
+        {{ site.title | escape }}
+      </span>
     </a>
   </div>
 

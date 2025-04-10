@@ -1,21 +1,22 @@
 <form id="formsearch" action="/search/" class="relative">
-  <label for="search" class="sr-only">Search</label>
   <div class="input-button-group">
-    <input
+    <wa-input
       name="s"
       type="text"
       id="search"
       autocomplete="off"
       placeholder="Search..."
-    />
-    <button
-      appearance="plain"
+      clearable
+      size="large"
+      style="width: 100%"
+    ></wa-input>
+    <wa-button style="width: 3em;"
       type="submit"
+               size="large"
       id="search-button"
     >
-      <i class="fa-sharp-duotone fa-solid fa-magnifying-glass" id="search-icon"></i>
-      <i class="fa-sharp-duotone fa-solid fa-strawberry fa-flip" id="spinner-icon" style="display: none"></i>
-    </button>
+      <wa-icon slot="prefix" name="magnifying-glass" variant="solid" id="search-icon"></wa-icon>
+    </wa-button>
   </div>
   <div
     id="instantResults"
