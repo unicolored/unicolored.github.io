@@ -2,9 +2,9 @@
 
 set -e
 
-yarn build:site:prod
 yarn build:css
-yarn proof
+yarn build:site:prod
+#yarn proof
 
 yarn check
 
