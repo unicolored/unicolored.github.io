@@ -20,20 +20,15 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-15T15:00:00+00:00","datePublished":"2025-03-15T15:00:00+00:00","description":"Big news! initial-term v0.3.0 is now live on NPM 🎉. Grab this Quake-stylish console at https://www.npmjs.com/package/initial-term and level up your webmaster game with retro flair 😄.","headline":"Initial-sh v0.3.0 Hits NPM!","mainEntityOfPage":{"@type":"WebPage","@id":"https://unicolo.red/release/2025/03/15/initial-sh-v0.3.0-live.html"},"url":"https://unicolo.red/release/2025/03/15/initial-sh-v0.3.0-live.html"}</script>
 <!-- End Jekyll SEO tag -->
-<meta name="description" content="">
-
-
-<!--    <link rel="stylesheet" href="/assets/main.css">-->
-    <link rel="stylesheet" href="/assets/css/style.css"/>
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/themes/default.css" />
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/styles/webawesome.css" />
-    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.11/dist/webawesome.loader.js"></script>
-
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/glossy.css" />
+<meta name="description" content=""><link type="application/atom+xml" rel="alternate" href="https://unicolo.red/feed.xml" title="The Red Journey" /><link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/tailspin.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/matter/color.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/color/elegant.css" />
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/brand/red.css" />
-    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/mellow/typography.css" />
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/themes/active/typography.css" />
 
-<!--    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/utilities/fouce.css" />--><link type="application/atom+xml" rel="alternate" href="https://unicolo.red/feed.xml" title="The Red Journey" /><!---->
+    <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/styles/webawesome.css" />
+    <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.12/dist/webawesome.loader.js"></script>
+    <link rel="stylesheet" href="/public/styles.css" />
 
     <script
       data-proofer-ignore
@@ -61,86 +56,67 @@
 
 
 </head>
-<body>
+<body><header class="_page_header">
+  <div class="_page_header_logo"><a class="flex content-center gap-4" rel="author" href="/">
+      <span class="flex content-center self-center justify-center text-center w-[120px] h-[120px] text-7xl">
+        <span class="inline-block self-center h-[72px]"><i class="fa-kit fa-unicolored"></i></span>
+      </span>
+      <span class="text-6xl self-center">
+        The Red Journey
+      </span>
+    </a>
+  </div>
 
-<wa-page view="desktop" navigation-placement="start" style="--header-height: 57.59375px; --subheader-height: 57.59375px; --banner-height: 57.59375px; --footer-height: 57.59375px;">
 
+  <nav class="_page_header_nav">
 
-<header class="slot-content" slot="header">
-<!--    <div class="wrapper text-center p-5 w-full">-->
-<!---->
-<!---->
-<!--      <a class="site-title wa-heading-3xl" rel="author" href="/">The Red Journey</a>-->
-<!--    </div>-->
+    <div class="nav-items">
+      
+      
+      
+      <a class="nav-item" href="/projects/">Projects</a>
+      
+      
+      
+      
+      <a class="nav-item" href="/about/">About</a>
+      
+      
+    </div>
 
-   <!-- Breadcrumb -->
-    <div class="flex justify-around p-4 w-full">
+  </nav>
 
-     <!-- ... -->
-<div class="grow">
-  <wa-breadcrumb>
-    <wa-breadcrumb-item href="/">
-        <span class="wa-heading-xl text-red-800 hover:text-red-700">
-        <i class="fa-kit fa-unicolored fa-xl"></i> The Red Journey
-          </span>
-    </wa-breadcrumb-item>
-
-           <wa-breadcrumb-item href="/about">About</wa-breadcrumb-item>
-  </wa-breadcrumb>
-</div>
-
-      <div>
-        <form id="formsearch" action="/recherche/" class="relative">
-  <label for="search" class="sr-only">Search</label>
-  <div class="flex">
-    <input
+  <div class="_page_header_search">
+    <form id="formsearch" action="/search/" class="relative">
+  <div class="input-button-group">
+    <wa-input
       name="s"
       type="text"
       id="search"
       autocomplete="off"
-      class="border p-2 w-full bg-gray-100 hover:bg-gray-50 focus:bg-white focus:outline-none"
       placeholder="Search..."
-    />
-    <button
+      clearable
+      size="large"
+      style="width: 100%"
+    ></wa-input>
+    <wa-button style="width: 3em;"
       type="submit"
+               size="large"
       id="search-button"
-      class="p-2 w-12 border cursor-pointer flex items-center justify-center"
     >
-      <i class="fa-sharp-duotone fa-solid fa-magnifying-glass text-gray-100" id="search-icon"></i>
-      <i class="fa-sharp-duotone fa-solid fa-strawberry fa-flip text-gray-100" id="spinner-icon" style="display: none"></i>
-    </button>
+      <wa-icon slot="prefix" name="magnifying-glass" variant="solid" id="search-icon"></wa-icon>
+    </wa-button>
   </div>
   <div
     id="instantResults"
-    class="absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto hidden"
+    class="hidden"
   ></div>
 </form>
 
-      </div>
-   </div>
- </div>
+  </div>
 </header>
-<!--<header class="slot-content" slot="banner">-->
-<!---->
-<!--      <div class="p-4">-->
-<!--        <nav class="wa-cluster">-->
-<!---->
-<!---->
-<!---->
-<!---->
-<!--        </nav>-->
-<!--      </div>-->
-<!---->
-<!--</header>-->
-
-<!--<div class="slot-content" slot="subheader">-->
-<!--</div>-->
-<!--    <header class="slot-content" slot="main-header">-->
-
-<!--    </header>-->
-    <div class="slot-content" slot="">
-        <div class="@container mx-auto">
-            <article class="prose lg:prose-lg mt-12 m-auto" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="@container mx-auto">
+  <article class="prose lg:prose-lg mt-12 m-auto" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Initial-sh v0.3.0 Hits NPM!</h1>
@@ -169,19 +145,11 @@ coding! 🚀</p>
 
 </article>
 
-        </div>
-    </div>
-    <footer class="slot-content" slot="main-footer">
-    </footer>
-    <div class="slot-content" slot="aside">
-    </div>
-    <div class="slot-content" slot="navigation-toggle">
-    </div><footer class="slot-content" slot="footer">
+</div><footer class="slot-content" slot="footer">
 
-  <wa-stack class="w-full mt-12 mb-24">
 
     <hr class="border-1 border-red-200">
-    <h2 class="text-center w-full" style="color:var(--wa-color-brand)">The Red Journey</h2>
+    <h2 class="text-center w-full" style="color:var(--wa-color-brand)"><i class="fa-kit fa-unicolored"></i> The Red Journey</h2>
 
     <!--  <ul class="contact-list">-->
     <!--    <li class="p-name">-->
@@ -200,15 +168,18 @@ coding! 🚀</p>
     <div class="prose m-auto">
       <p></p>
     </div>
-    <div class="flex justify-between w-[100px] mx-auto">
-        <a href="https://github.com/unicolored"><i class="fa-brands fa-github text-4xl"></i></a>
+    <div class="flex justify-between gap-4 max-w-[300px] mx-auto">
+        <a href="https://github.com/unicolored"><i class="fa-brands fa-fw fa-github text-4xl"></i></a>
         &nbsp;
         <a href="https://buymeacoffee.com/unicolored">
-          <i class="fa-sharp-duotone fa-solid fa-mug-hot text-4xl"></i>
+          <i class="fa-sharp-duotone fa-solid fa-mug-hot fa-fw text-4xl"></i>
+        </a>
+        &nbsp;
+        <a href="https://gilles.dev">
+            <i class="fa-kit fa-gilles fa-fw text-4xl"></i>
         </a>
     </div>
 
-  </wa-stack>
 
 </footer>
 
@@ -258,7 +229,7 @@ coding! 🚀</p>
     return hits
       .map(
         (hit) =>
-          `<p class="result-item p-2 hover:bg-gray-100 cursor-pointer"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit._formatted.title || hit.title}</a></p>`,
+          `<p class="result-item"><a href="${hit.url}" class="text-blue-500 hover:underline block">${hit.title}</a></p>`,
       )
       .join('');
   };
@@ -277,9 +248,9 @@ coding! 🚀</p>
     try {
       const results = await index.search(query, {
         limit: 5,
-        attributesToHighlight: ['title'], // Highlight the 'title' field
-        highlightPreTag: '<mark>',
-        highlightPostTag: '</mark>',
+        // attributesToHighlight: [], // Highlight the 'title' field
+        // highlightPreTag: '<mark>',
+        // highlightPostTag: '</mark>',
       });
       const html = renderInstantResults(results.hits);
       searchCache[query] = html;
@@ -311,37 +282,23 @@ coding! 🚀</p>
 
   const navigateResults = (e) => {
     const items = instantResults.querySelectorAll('.result-item');
-    console.log('⭐️ items.length', items.length);
-    console.log(
-      "⭐️ instantResults.classList.contains('hidden')",
-      instantResults.classList.contains('hidden'),
-    );
-    // if (!items.length || instantResults.classList.contains('hidden')) return;
 
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
       selectedLink = items[selectedIndex]?.querySelector('a');
-      console.log(selectedLink);
       updateHighlight();
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       selectedIndex = Math.max(selectedIndex - 1, -1);
       selectedLink = items[selectedIndex]?.querySelector('a');
-      console.log(selectedLink);
       updateHighlight();
     } else if (e.key === 'Enter') {
       e.preventDefault(); // Prevent form submission
       e.stopPropagation();
-      console.log('🟢', selectedLink);
-      // console.log(selectedIndex)
-      // if (selectedIndex >= 0) {
-      //   const selectedLink = items[selectedIndex].querySelector('a');
-      //   console.log(selectedLink)
       if (selectedLink) {
         window.location.href = selectedLink; // Navigate to selected link
         resetResults();
-        // }
       } else {
         searchForm.submit(); // Fallback to form submission if no result selected
       }
@@ -360,15 +317,12 @@ coding! 🚀</p>
   searchInput.addEventListener('keydown', (e) => {
     const query = e.target.value.trim();
 
-    console.log(query);
-
     if (query.length < 2) {
       resetResults();
       return;
     }
 
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter') {
-      console.log('Hit!', e.key);
       navigateResults(e);
     } else {
       performSearch(query);
@@ -379,10 +333,7 @@ coding! 🚀</p>
   // Prevent default form submission on Enter key
   searchForm.addEventListener('submit', (e) => {
     // Prevent submission unless triggered by button click or explicit form.submit()
-    // console.log('🟣',e.submitter)
-    // if (e.submitter !== searchButton) {
     e.preventDefault();
-    // }
   });
 
   // Handle button click explicitly (optional, for clarity)
@@ -396,7 +347,6 @@ coding! 🚀</p>
   });
 
   document.addEventListener('click', (e) => {
-    console.log('document click');
     if (!searchInput.contains(e.target) && !instantResults.contains(e.target)) {
       resetResults();
     }
@@ -411,8 +361,6 @@ coding! 🚀</p>
   });
 </script>
  '
-</wa-page>
-
 </body>
 
 </html>

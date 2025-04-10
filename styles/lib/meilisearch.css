@@ -1,0 +1,30 @@
+#instantResults {
+  @apply absolute left-0 mt-1 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 overflow-y-auto;
+
+  .result-item {
+    @apply p-4 hover:bg-gray-100 cursor-pointer m-0 text-left text-lg;
+  }
+}
+
+#results {
+  p {
+    @apply text-lg;
+  }
+}
+
+#formsearch {
+  .input-button-group {
+    @apply flex;
+  }
+
+  wa-input#search {
+    --wa-form-control-border-radius: 16px 0 0 4px;
+  }
+
+  wa-button#search-button {
+    border-end-start-radius: 0;
+    border-start-start-radius: 0;
+    border-start-end-radius: 4px;
+    border-end-end-radius: 16px;
+  }
+}
