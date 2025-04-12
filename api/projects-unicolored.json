@@ -1,0 +1,6 @@
+---
+layout: null
+permalink: /api/projects-unicolored.json
+---
+{% assign projects = site.projects | where: "category", 'unicolored' %}
+{{ projects | jsonify }}
