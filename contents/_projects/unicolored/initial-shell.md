@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Initial Shell
-link: https://initial.sh
+link: https://www.initial.sh
 github: https://github.com/unicolored/initial.term
 npm: https://www.npmjs.com/package/initial-term
 #thumbnail: /assets/images/
