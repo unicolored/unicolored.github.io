@@ -13,7 +13,7 @@
     "build:site:local": "yarn build:css && bundle exec jekyll build --config _config.yml,_config.local.yml",
     "build:site:prod": "yarn build:css && bundle exec jekyll build --config _config.yml,_config.prod.yml,_config.secrets.yml",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sync:api": "node sync/sync-api.js"
+    "sync:api": "yarn build:site && node sync/sync-api.js"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.3",
