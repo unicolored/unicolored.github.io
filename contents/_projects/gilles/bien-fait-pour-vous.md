@@ -2,7 +2,7 @@
 layout: project
 title: Bien fait pour vous
 #link: https://gilleshoarau.com
-#thumbnail: /assets/images/
+thumbnail: /assets/images/projects/2016/01/tshirts-gilles.jpg
 #description:
 category: gilles
 ---

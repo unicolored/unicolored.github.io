@@ -2,7 +2,7 @@
 layout: project
 title: Gilles Hoarau
 link: https://gilleshoarau.com
-#thumbnail: /assets/images/
+thumbnail: /assets/images/projects/2014/09/logo-gilles-hoarau.png
 #description:
 category: gilles
 ---

@@ -2,7 +2,7 @@
 layout: project
 title: Various logo
 #link: https://
-#thumbnail: /assets/images/
+thumbnail: /assets/images/projects/2016/02/logo-brightside.png
 #description:
 category: gilles
 ---
