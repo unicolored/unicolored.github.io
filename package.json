@@ -10,8 +10,8 @@
     "check": "npx prettier --check \"**/*.{js,css,md,markdown,yml,yaml}\"",
     "proof": "bundle exec htmlproofer ./_site --check-external-hash --ignore-urls \"/localhost/,/buymeacoffee/\"",
     "build:site": "bundle exec jekyll build --config _config.yml",
-    "build:site:local": "bundle exec jekyll build --config _config.yml,_config.local.yml",
-    "build:site:prod": "bundle exec jekyll build --config _config.yml,_config.prod.yml,_config.secrets.yml",
+    "build:site:local": "yarn build:css && bundle exec jekyll build --config _config.yml,_config.local.yml",
+    "build:site:prod": "yarn build:css && bundle exec jekyll build --config _config.yml,_config.prod.yml,_config.secrets.yml",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
