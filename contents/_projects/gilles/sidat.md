@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Regina-caeli
+title: Sidat
 #link: https://
 #thumbnail: /assets/images/
 #description:

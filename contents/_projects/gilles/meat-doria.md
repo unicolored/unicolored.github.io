@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Regina-caeli
+title: Meat&Doria
 #link: https://
 #thumbnail: /assets/images/
 #description:

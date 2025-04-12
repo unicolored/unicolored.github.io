@@ -2,7 +2,7 @@
 layout: project
 title: Logo Champignol-lez-Mondeville
 #link: https://
-#thumbnail: /assets/images/
+thumbnail: /assets/images/projects/2015/01/logo-champignol-lez-mondeville.png
 #description:
 category: gilles
 ---

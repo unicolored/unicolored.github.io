@@ -2,7 +2,7 @@
 layout: project
 title: Unicolored
 #link: https://unicolored.com
-#thumbnail: /assets/images/
+thumbnail: /assets/images/projects/2015/11/logo-unicolored.png
 #description:
 category: gilles
 ---
