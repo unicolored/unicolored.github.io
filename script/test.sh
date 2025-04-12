@@ -2,10 +2,11 @@
 
 set -e
 
-yarn build:css
-yarn build:site:prod
-#yarn proof
-
 yarn check
+
+yarn build:site:prod
+
+yarn proof
+
 
 echo "✅ Tests completed"
