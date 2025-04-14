@@ -1,9 +1,9 @@
 # The Red Journey
 
 Welcome to **The Red Journey**, my creative space at
-[unicolo.red](https://unicolo.red). This Jekyll-powered blog, hosted on GitHub
-Pages, is where I share projects, ideas, and experiments—tinted with a red-hued
-twist.
+[unicolored.com](https://unicolored.com). This Jekyll-powered blog, hosted on
+GitHub Pages, is where I share projects, ideas, and experiments—tinted with a
+red-hued twist.
 
 ## About
 
@@ -27,4 +27,4 @@ Find content in `_posts/`. Add your own with `YYYY-MM-DD-title.md`.
 
 MIT—fork it, tweak it, make it yours.
 
-Follow along at [unicolo.red](https://unicolo.red)!
+Follow along at [unicolored.com](https://unicolored.com)!

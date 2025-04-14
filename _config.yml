@@ -3,8 +3,8 @@ baseurl: ''
 host: 'localhost'
 port: 4125
 safe: true
-url: 'https://unicolo.red' # the base hostname & protocol for your site, e.g. http://example.com
-domain: unicolo.red
+url: 'https://unicolored.com' # the base hostname & protocol for your site, e.g. http://example.com
+domain: unicolored.com
 #description: >- # this means to ignore newlines
 #  Hey there! I’m Gilles, aka unicolored—a creative developer painting my journey
 #  red with code, ideas, and life.
