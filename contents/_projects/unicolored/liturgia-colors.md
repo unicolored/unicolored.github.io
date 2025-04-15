@@ -1,7 +1,7 @@
 ---
 layout: project
 title: 🎨 Liturgia Colors
-link: https://unicolo.red/liturgia-colors/
+link: https://unicolored.com/liturgia-colors/
 github: https://github.com/unicolored/liturgia-colors
 npm: https://www.npmjs.com/package/liturgia-colors
 #thumbnail: /assets/images/

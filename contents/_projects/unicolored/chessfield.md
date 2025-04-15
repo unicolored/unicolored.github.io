@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Chessfield
-link: https://unicolo.red/chessfield
+link: https://unicolored.com/chessfield
 github: https://github.com/unicolored/chessfield
 npm: https://www.npmjs.com/package/chessfield
 #thumbnail: /assets/images/

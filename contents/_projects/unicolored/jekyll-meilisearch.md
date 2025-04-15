@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Jekyll Meilisearch
-link: https://unicolo.red/jekyll-meilisearch/
+link: https://unicolored.com/jekyll-meilisearch/
 github: https://github.com/unicolored/jekyll-meilisearch
 gem: https://rubygems.org/gems/jekyll-meilisearch
 #thumbnail: /assets/images/
