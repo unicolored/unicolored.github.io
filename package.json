@@ -1,6 +1,6 @@
 {
   "name": "unicolored.github.io",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Welcome to **The Red Journey**, my creative space at [unicolored.com](https://unicolored.com). This Jekyll-powered blog, hosted on GitHub Pages, is where I share projects, ideas, and experiments—tinted with a red-hued twist.",
   "scripts": {
     "build:css": "npx postcss styles/main.css -o public/styles.css --verbose",
